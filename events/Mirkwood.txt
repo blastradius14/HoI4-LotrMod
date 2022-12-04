@@ -1,4 +1,4 @@
-﻿###########################
+###########################
 # Mirkwood Events
 ###########################
 
@@ -10,24 +10,24 @@ country_event = {
 	title = mirkwood.1.t
 	desc = mirkwood.1.d
 	picture = GFX_report_event_paper
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
-		tag = MEN
-		ECU = { has_offensive_war_with = DOM }
+		tag = MIR
+		ERE = { has_offensive_war_with = DAL }
 	}
 
 	mean_time_to_happen = {
-		days = 1	
+		days = 1
 	}
-	
+
 	option = { #Seize hostilities!
 		name = mirkwood.1.a
 		ai_chance = {
 			base = 100
 		}
-		ECU = { country_event = { days = 1 id = mirkwood.2 } }
+		ERE = { country_event = { days = 1 id = mirkwood.2 } }
 	}
 	option = { #Let them be
 		name = mirkwood.1.b
@@ -38,16 +38,16 @@ country_event = {
 				THIS = { has_government = communism }
 			}
 			modifier = {
-				has_opinion = { target = ECU value > 50 }
+				has_opinion = { target = ERE value > 50 }
 				add = 50
 			}
 			modifier = {
 				add = 20
-				strength_ratio = { tag = ECU ratio < 2.5 }
+				strength_ratio = { tag = ERE ratio < 2.5 }
 			}
 		}
 	}
-	
+
 }
 
 
@@ -57,11 +57,11 @@ country_event = {
 	title = mirkwood.2.t
 	desc = mirkwood.2.d
 	picture = GFX_report_event_paper
-	
+
 	fire_only_once = yes
-	
+
 	is_triggered_only = yes
-	
+
 	option = { #Accept
 		name = mirkwood.2.a
 		ai_chance = {
@@ -71,8 +71,8 @@ country_event = {
 				THIS = { has_government = democratic }
 			}
 		}
-		ECU = { white_peace = DOM }
-		MEN = { give_guarantee = DOM }
+		ERE = { white_peace = DAL }
+		MIR = { give_guarantee = DAL }
 		hidden_effect = {news_event = { hours = 10 id = news.350 }}
 	}
 	option = { #Refuse
@@ -84,21 +84,21 @@ country_event = {
 				THIS = { has_government = fascism }
 			}
 			modifier = {
-				has_opinion = { target = MEN value < 0 }
+				has_opinion = { target = MIR value < 0 }
 				add = 15
 			}
 			modifier = {
 				add = 30
-				strength_ratio = { tag = MEN ratio > 0.6 }
+				strength_ratio = { tag = MIR ratio > 0.6 }
 			}
 			modifier = {
 				add = 30
-				ECU = { has_country_leader = { ruling_only = yes name = "Daín II Ironfoot" } }
+				ERE = { has_country_leader = { ruling_only = yes name = "Daín II Ironfoot" } }
 			}
 		}
-		MEN = { create_wargoal = { type = annex_everything target = ECU } }
+		MIR = { create_wargoal = { type = annex_everything target = ERE } }
 	}
-	
+
 }
 
 # Ents asked to join
@@ -107,11 +107,11 @@ country_event = {
 	title = mirkwood.3.t
 	desc = mirkwood.3.d
 	picture = GFX_report_event_paper
-	
+
 	fire_only_once = yes
-	
+
 	is_triggered_only = yes
-	
+
 	option = { #Accept
 		name = mirkwood.3.a
 		ai_chance = {
@@ -121,19 +121,19 @@ country_event = {
 				THIS = { has_government = fascism }
 			}
 		}
-		MEN = { add_to_faction = EST }
+		MIR = { add_to_faction = ENT }
 	}
 	option = { #Refuse
 		name = mirkwood.3.b
 		ai_chance = {
 			base = 10
 			modifier = {
-				has_opinion = { target = MEN value < -30 }
+				has_opinion = { target = MIR value < -30 }
 				add = 20
 			}
 		}
 	}
-	
+
 }
 
 
@@ -143,12 +143,12 @@ country_event = {
 	title = mirkwood.4.t
 	desc = mirkwood.4.d
 	picture = GFX_report_event_paper
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
-		tag = MEN
-		date > 3019.7.1 
+		tag = MIR
+		date > 3019.7.1
 		NOT = { has_global_flag = mirkwood_spiders_purged }
 		NOT = { has_global_flag = mirkwood_spiders_free }
 		NOT = { has_global_flag = mirkwood_spiders_warning }
@@ -167,14 +167,14 @@ country_event = {
 			has_global_flag = mirkwood_dealing_with_spiders
 		}
 	}
-	
-	option = { 
+
+	option = {
 		name = mirkwood.4.a
 		set_global_flag = mirkwood_spider_warning
 		add_manpower = -60000
-		823 = { remove_core_of = MEN }
+		823 = { remove_core_of = MIR }
 	}
-	
+
 }
 
 # Spider war
@@ -183,12 +183,12 @@ country_event = {
 	title = mirkwood.5.t
 	desc = mirkwood.5.d
 	picture = GFX_report_event_paper
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
-		tag = MEN
-		date > 3020.6.1 
+		tag = MIR
+		date > 3020.6.1
 		has_global_flag = mirkwood_spider_warning
 		NOT = { has_global_flag = mirkwood_spiders_purged }
 		NOT = { has_global_flag = mirkwood_spiders_free }
@@ -211,21 +211,21 @@ country_event = {
 			communism > 0.4
 		}
 	}
-	
-	option = { 
+
+	option = {
 		name = mirkwood.5.a
 		set_global_flag = mirkwood_spider_attack
-		SPR = {
+		SPI = {
 			add_state_core = 823
-			set_capital = 823
+			set_capital = { state = 823 }
 			set_state_controller = 823
 			set_state_owner = 823
-			load_oob = "SPR_Spiders"
-			declare_war_on = { target = MEN type = annex_everything } 
+			load_oob = "SPI_Spiders"
+			declare_war_on = { target = MIR type = annex_everything }
 		}
 		hidden_effect = {news_event = { hours = 24 id = news.382 }}
 	}
-	
+
 }
 
 # Dol Guldur attack (warningshot)
@@ -234,12 +234,12 @@ country_event = {
 	title = mirkwood.6.t
 	desc = mirkwood.6.d
 	picture = GFX_report_event_paper
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
-		tag = MEN
-		date > 3020.5.1 
+		tag = MIR
+		date > 3020.5.1
 		NOT = { has_global_flag = mirkwood_dolguldur_purged }
 		NOT = { has_global_flag = mirkwood_dolguldur_attack }
 		NOT = { has_global_flag = mirkwood_dolguldur_warning }
@@ -257,14 +257,14 @@ country_event = {
 			has_global_flag = mirkwood_dealing_with_dolguldur
 		}
 	}
-	
-	option = { 
+
+	option = {
 		name = mirkwood.6.a
 		set_global_flag = mirkwood_dolguldur_warning
 		add_manpower = -80000
-		828 = { remove_core_of = MEN }
+		828 = { remove_core_of = MIR }
 	}
-	
+
 }
 
 # Dol Guldur war
@@ -273,12 +273,12 @@ country_event = {
 	title = mirkwood.7.t
 	desc = mirkwood.7.d
 	picture = GFX_report_event_paper
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
-		tag = MEN
-		date > 3020.12.1 
+		tag = MIR
+		date > 3020.12.1
 		has_global_flag = mirkwood_dolguldur_warning
 		NOT = { has_global_flag = mirkwood_dolguldur_purged }
 		NOT = { has_global_flag = mirkwood_dolguldur_attack }
@@ -296,24 +296,123 @@ country_event = {
 			has_global_flag = mirkwood_dealing_with_dolguldur
 		}
 	}
-	
-	option = { 
+
+	option = {
 		name = mirkwood.7.a
 		set_global_flag = mirkwood_dolguldur_attack
-		GUA = {
-			add_state_core = 828
-			set_capital = 828
+		DGU = {
 			set_state_controller = 828
 			set_state_owner = 828
-			load_oob = "GUA_Orcs"
-			if = { 
-				limit = { MON = { has_government = fascism is_faction_leader = yes } }
-				MON = { add_to_faction = GUA }
-				MON = { create_wargoal = { type = annex_everything target = MEN } }
-				else = { GUA = { create_wargoal = { type = annex_everything target = MEN } } } 
-			 }
+			load_oob = "DGU_Orcs"
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+		}
+		MOR = {
+			add_to_faction = DGU
 		}
 		hidden_effect = {news_event = { hours = 24 id = news.383 }}
 	}
-	
+
+}
+
+# Send message about troops being sent to Dol Guldur by Mordor
+country_event = {
+	id = mirkwood.8
+	title = mirkwood.8.t
+	desc = mirkwood.8.d
+	picture = GFX_report_event_ring
+
+	is_triggered_only = yes
+
+	option = {
+		name = mirkwood.8.a
+
+	}
+}
+
+# Mordor requests Dol Guldur for alliance
+country_event = {
+	id = mirkwood.9
+	title = mirkwood.9.t
+	desc = mirkwood.9.d
+	picture = GFX_report_event_ring
+
+	is_triggered_only = yes
+
+	option = {
+		name = mirkwood.9.a
+		hidden_effect = {
+			MIR = {
+				release = DGU
+			}
+			DGU = {
+				set_state_controller = 828
+				set_state_owner = 828
+				load_oob = "DGU_Orcs"
+				set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
+				}
+			}
+		}
+		MOR = {
+			puppet = DGU
+			add_to_faction = MIR
+		}
+
+	}
+	option = {
+		name = mirkwood.9.b
+		MOR = {
+			country_event = { id = mordor.49 }
+			add_opinion_modifier = {
+				target = MIR
+				modifier = small_decrease
+			}
+		}
+	}
+}
+
+# Mordor requests Dol Guldur for alliance
+country_event = {
+	id = mirkwood.10
+	title = mirkwood.10.t
+	desc = mirkwood.10.d
+	picture = GFX_report_event_ring
+
+	is_triggered_only = yes
+
+	option = {
+		name = mirkwood.10.a
+		hidden_effect = {
+			MIR = {
+				release = DGU
+			}
+			DGU = {
+				set_state_controller = 828
+				set_state_owner = 828
+				load_oob = "DGU_Orcs"
+				set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
+				}
+			}
+		}
+		MOR = {
+			puppet = DGU
+			add_to_faction = MIR
+		}
+	}
+	option = {
+		name = mirkwood.10.b
+		MOR = {
+			country_event = { id = mordor.49 }
+			add_opinion_modifier = {
+				target = MIR
+				modifier = small_decrease
+			}
+		}
+	}
 }

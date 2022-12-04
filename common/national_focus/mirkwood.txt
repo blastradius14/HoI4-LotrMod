@@ -4,7 +4,7 @@ country = {
 	factor=0
 	modifier = {
 		add = 10
-		tag = MEN
+		tag = MIR
 	}
 }
 
@@ -27,7 +27,9 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 prerequisite = { }
 	 cost = 10
 	 available_if_capitulated = yes
-	 completion_reward = { add_political_power = 100 }
+	 completion_reward = {
+		add_political_power = 100
+	}
 }
 
 #Focus for Oppose Erebor
@@ -44,8 +46,8 @@ continuous_focus_position = { x = 50 y = 2000 }
 		completion_reward = {
 			add_threat = 1
 			add_political_power = 70
-			ECU = { add_opinion_modifier = { target = MEN modifier = large_decrease } }
-			MEN = { add_opinion_modifier = { target = ECU modifier = large_decrease } }
+			ERE = { add_opinion_modifier = { target = MIR modifier = large_decrease } }
+			MIR = { add_opinion_modifier = { target = ERE modifier = large_decrease } }
 		}
  }
 
@@ -60,7 +62,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 		prerequisite = { focus = opposeerebor }
 		cost = 10
  		available_if_capitulated = yes
-		completion_reward = { add_opinion_modifier = { target = ECU modifier = embargo } }
+		completion_reward = { add_opinion_modifier = { target = ERE modifier = embargo } }
 }
 
 #Focus for Claim Erebor
@@ -93,8 +95,8 @@ continuous_focus_position = { x = 50 y = 2000 }
 		cost = 10
  		available_if_capitulated = yes
 		completion_reward = {
-				remove_opinion_modifier = { target = ECU modifier = past_quarrels }
-				ECU = { remove_opinion_modifier = { target = MEN modifier = past_quarrels } }
+				remove_opinion_modifier = { target = ERE modifier = past_quarrels }
+				ERE = { remove_opinion_modifier = { target = MIR modifier = past_quarrels } }
 		}
 }
 
@@ -141,8 +143,8 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 cost = 10
 	 available_if_capitulated = yes
 	 completion_reward = {
-	 		add_opinion_modifier = { target = ECU modifier = large_increase }
-	 		ECU = { add_opinion_modifier = { target = MEN modifier = large_increase } }
+	 		add_opinion_modifier = { target = ERE modifier = large_increase }
+	 		ERE = { add_opinion_modifier = { target = MIR modifier = large_increase } }
 	 }
 }
 
@@ -151,7 +153,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 id = unitewitherebor
 	 icon = GFX_blamethedwarves
 	 ai_will_do = { factor = 7 }
-	 available = { ECU = { has_opinion = { target = MEN value > 19 } } is_in_faction = no ECU = { is_faction_leader = yes } }
+	 available = { ERE = { has_opinion = { target = MIR value > 19 } } is_in_faction = no ERE = { is_faction_leader = yes } }
 	 x =2
 	 y =4
 	 mutually_exclusive = {  }
@@ -159,7 +161,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 prerequisite = { focus = importereborsteel}
 	 cost = 10
 	 available_if_capitulated = yes
-	 completion_reward = { ECU = { add_to_faction = MEN } }
+	 completion_reward = { ERE = { add_to_faction = MIR } }
 }
 
 #Focus for Draw closer to Godnor
@@ -174,8 +176,8 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 cost = 10
 	 available_if_capitulated = yes
 	 completion_reward = {
-	 		add_opinion_modifier = { target = GEO modifier = large_increase }
-	 		GEO = { add_opinion_modifier = { target = MEN modifier = large_increase } }
+	 		add_opinion_modifier = { target = GON modifier = large_increase }
+	 		GON = { add_opinion_modifier = { target = MIR modifier = large_increase } }
 	 }
 }
 
@@ -184,14 +186,14 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 id = men_unitewithgondor
 	 icon = GFX_sabotagegondor
 	 ai_will_do = { factor = 6 }
-	 available = { is_in_faction = no GEO = { is_faction_leader = yes } }
+	 available = { is_in_faction = no GON = { is_faction_leader = yes } }
 	 x =5
 	 y =4
 	 mutually_exclusive = { }
 	 prerequisite = { focus = drawclosertogondor}
 	 cost = 10
 	 available_if_capitulated = yes
-	 completion_reward = { GEO = { add_to_faction = MEN } }
+	 completion_reward = { GON = { add_to_faction = MIR } }
 }
 
 #Focus for Consensus Rule
@@ -238,7 +240,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 cost = 10
 	 available_if_capitulated = yes
 	 completion_reward = {
-	 		add_ideas = MEN_government_appropriation
+	 		add_ideas = MIR_government_appropriation
 		}
 }
 
@@ -356,10 +358,10 @@ continuous_focus_position = { x = 50 y = 2000 }
   	available_if_capitulated = yes
 		completion_reward = {
 			add_tech_bonus = {
-				name = JOR_armored_horses
+				name = ROH_armored_horses
 				bonus = 0.5
 				uses = 1
-				category = armor
+				category = lotr_cavalry
 			}
 		}
  }
@@ -380,7 +382,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 					name = infantry_artillery_bonus
 					ahead_reduction = 1
 					uses = 2
-					category = artillery
+					category = lotr_infantry_archery
 				}
 			}
  }
@@ -431,7 +433,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		cost = 10
   	available_if_capitulated = yes
 		completion_reward = {
-			add_ideas = MEN_weaponized_forest
+			add_ideas = MIR_weaponized_forest
 		}
  }
 
@@ -465,10 +467,10 @@ continuous_focus_position = { x = 50 y = 2000 }
   	available_if_capitulated = yes
 		completion_reward = {
 			add_tech_bonus = {
-					name = JOR_ride_of_the_rohirrim
+					name = ROH_ride_of_the_rohirrim
 					bonus = 0.5
 					uses = 2
-					category = motorized_equipment
+					category = lotr_cavalry_carriages
 				}
 		}
  }
@@ -486,10 +488,10 @@ continuous_focus_position = { x = 50 y = 2000 }
   	available_if_capitulated = yes
 		completion_reward = {
 			add_tech_bonus = {
-				name = JOR_standardisation_of_equipment
+				name = ROH_standardisation_of_equipment
 				bonus = 0.5
 				uses = 1
-				category = infantry_weapons
+				category = lotr_infantry_weapons
 			}
 		}
  }
@@ -505,7 +507,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		prerequisite = { focus = usetheforestasaweapon}
  		cost = 10
   	available_if_capitulated = yes
-		completion_reward = { add_ideas = MEN_army_of_the_greenwood }
+		completion_reward = { add_ideas = MIR_army_of_the_greenwood }
  }
 
  #Focus for Exploit the rubber monopoly
@@ -615,7 +617,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 				name = industrial_bonus
 	 				bonus = 0.5
 	 				uses = 1
-	 				category = industry
+	 				category = lotr_labour_construction_industry
 	 			}
 	 		}
  }
@@ -636,7 +638,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 			name = cat_heavy_armor
 	 			bonus = 0.5
 	 			uses = 2
-	 			category = cat_heavy_armor
+	 			category = lotr_machines_siege_equipment
 	 		}
 	 	}
  }
@@ -655,7 +657,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 		completion_reward = {
 			create_country_leader = {
 				name = "Radagast"
-				picture = "Portrait_Mirkwood_Radagast.tga"
+				picture = "Portrait_Mirkwood_Radagast.dds"
 				expire = "1980.1.1"
 				ideology = nazism
 				traits = { indomitable_perseverance }
@@ -696,8 +698,8 @@ continuous_focus_position = { x = 50 y = 2000 }
  				name = bomber_bonus
  				bonus = 0.5
  				uses = 3
- 				technology = strategic_bomber1
- 				category = tactical_bomber
+				category = lotr_eagles
+				category = lotr_fellbeasts
  			}
  		}
  }
@@ -719,7 +721,8 @@ continuous_focus_position = { x = 50 y = 2000 }
  				bonus = 0.5
  				ahead_reduction = 1
  				uses = 3
- 				category = cas_bomber
+				category = lotr_eagles
+				category = lotr_fellbeasts
  			}
  		}
  }
@@ -794,13 +797,8 @@ continuous_focus_position = { x = 50 y = 2000 }
 				name = fighter_bonus
 				bonus = 0.5
 				uses = 2
-				technology = early_fighter
-				technology = fighter1
-				technology = fighter2
-				technology = fighter3
-				technology = heavy_fighter1
-				technology = heavy_fighter2
-				technology = heavy_fighter3
+				category = lotr_eagles
+				category = lotr_fellbeasts
 			}
 		}
  }
@@ -868,10 +866,13 @@ continuous_focus_position = { x = 50 y = 2000 }
  		mutually_exclusive = { focus = drawclosertothedarkness }
  		prerequisite = { focus = greenwoodthegreatest}
  		cost = 10
-  	available_if_capitulated = yes
+		available = {
+			is_in_faction = no
+		}
+  		available_if_capitulated = yes
 		completion_reward = {
 				create_faction = "green_union"
-				MON = { add_opinion_modifier = { target = MEN modifier = large_decrease } }
+				MOR = { add_opinion_modifier = { target = MIR modifier = large_decrease } }
 		}
  }
 
@@ -886,7 +887,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 					has_war = yes
 			}
 		}
-		available = { threat > 0.5 NOT={is_in_faction_with = ECU} }
+		available = { threat > 0.5 NOT={is_in_faction_with = ERE} }
  		x =0
  		y =5
  		mutually_exclusive = { }
@@ -894,7 +895,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 		prerequisite = { focus = claimerebor focus =redinheartandmind}
  		cost = 10
   	available_if_capitulated = yes
-		completion_reward = { create_wargoal = { type = annex_everything target = ECU } }
+		completion_reward = { create_wargoal = { type = annex_everything target = ERE } }
  }
 
  #Focus for Military Industry 2
@@ -948,7 +949,7 @@ continuous_focus_position = { x = 50 y = 2000 }
   	available_if_capitulated = yes
 		completion_reward = {
 				set_global_flag = mirkwood_dark_sympathies
-				MON = { add_opinion_modifier = { target = MEN modifier = large_increase } }
+				MOR = { add_opinion_modifier = { target = MIR modifier = large_increase } }
 		}
  }
 
@@ -979,7 +980,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		cost = 10
   	available_if_capitulated = yes
 		completion_reward = {
-				EST = { country_event = { days = 1 id = mirkwood.3 } }
+				ENT = { country_event = { days = 1 id = mirkwood.3 } }
 		}
  }
 
@@ -995,7 +996,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		cost = 10
   	available_if_capitulated = yes
 		completion_reward = {
-				add_ideas = perception_management
+			add_ideas = perception_management
 		}
  }
 
@@ -1013,10 +1014,10 @@ continuous_focus_position = { x = 50 y = 2000 }
   	available_if_capitulated = yes
 		completion_reward = {
 			add_tech_bonus = {
-				name = JOR_rocket_development
+				name = ROH_rocket_development
 				bonus = 0.5
 				uses = 2
-				category = rocketry
+				category = lotr_knowledge_magic
 			}
 		}
  }
@@ -1038,7 +1039,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 				name = secret_bonus
 				bonus = 0.5
 				uses = 1
-				category = nuclear
+				category = lotr_knowledge_magic
 			}
 		}
  }
@@ -1114,40 +1115,47 @@ continuous_focus_position = { x = 50 y = 2000 }
 		id = purgetheorcsofdolguldur
 		icon = GFX_goal_generic_major_war
 		ai_will_do = { factor = 7 }
-		available = { NOT = { has_global_flag = mirkwood_dolguldur_attack } }
+		available = {
+			NOT = { has_global_flag = mirkwood_dolguldur_attack }
+			MOR = {
+				NOT = { has_completed_focus = sent_troops_to_dol_guldur }
+			}
+			controls_state = 828
+		}
  		x =11
  		y =9
  		mutually_exclusive = { focus = men_strikeadealwithsauron }
  		prerequisite = { focus = dealwithdolguldur}
  		cost = 10
-  	available_if_capitulated = yes
+  		available_if_capitulated = yes
 		completion_reward = {
-				add_manpower = -50000
-				set_global_flag = mirkwood_dolguldur_purged
-				add_state_core = 828
+			add_manpower = -50000
+			set_global_flag = mirkwood_dolguldur_purged
+			add_state_core = 828
 		}
  }
 
  #Focus for Strike a deal with Sauron
-		focus = {
-		id = men_strikeadealwithsauron
-		icon = GFX_unitewithsauron
-		ai_will_do = { factor = 8 }
-		available = { NOT = { has_global_flag = mirkwood_dolguldur_attack } any_country = { original_tag = MON has_government = fascism is_faction_leader = yes } }
- 		x =13
- 		y =9
- 		mutually_exclusive = { focus = purgetheorcsofdolguldur }
- 		prerequisite = { focus = drawclosertothedarkness}
-  	prerequisite = { focus =dealwithdolguldur}
- 		cost = 10
-  	available_if_capitulated = yes
-		completion_reward = {
-			random_country = {
-				limit = {original_tag = MON has_government = fascism is_faction_leader = yes}
-				add_to_faction = ROOT
-				add_state_core = 828
-			}
+focus = {
+	id = men_strikeadealwithsauron
+	icon = GFX_unitewithsauron
+	ai_will_do = { factor = 8 }
+	available = {
+		NOT = { has_global_flag = mirkwood_dolguldur_attack } any_country = { original_tag = MOR has_government = fascism is_faction_leader = yes }
+		controls_state = 828
+	}
+	x =13
+	y =9
+	mutually_exclusive = { focus = purgetheorcsofdolguldur }
+	prerequisite = { focus = drawclosertothedarkness}
+	prerequisite = { focus =dealwithdolguldur}
+	cost = 10
+	available_if_capitulated = yes
+	completion_reward = {
+		MOR = {
+			country_event = { id = mordor.48}
 		}
+	}
  }
 
  #Focus for Let the spiders roam free
@@ -1206,7 +1214,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 			set_cosmetic_tag = ARA
 			create_country_leader = {
 				name = "Shelob"
-				picture = "Portrait_Mirkwood_Shelob.tga"
+				picture = "Portrait_Mirkwood_Shelob.dds"
 				expire = "1980.1.1"
 				ideology = marxism
 				traits = { }
@@ -1227,7 +1235,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		cost = 10
   	available_if_capitulated = yes
 		completion_reward = {
-			add_ideas = MEN_children_of_ungoliant
+			add_ideas = MIR_children_of_ungoliant
 		}
  }
 

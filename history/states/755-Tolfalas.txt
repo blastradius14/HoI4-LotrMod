@@ -5,7 +5,7 @@ state={
 		1964 12840 
 	}
 	history={
-		owner = GEO
+		owner = GON
 		buildings = {
 			infrastructure = 2
 			air_base = 1
@@ -13,14 +13,13 @@ state={
 			anti_air_building = 1
 			12840 = { naval_base = 2 }
 		}
-		add_core_of = GEO
+		add_core_of = GON
 		victory_points = { 12840 5 }
 	}
 	
 	manpower=200000
 	resources={
-		steel=38
-		rubber=8
+		rubber=12
 	}
 	state_category = small_island
 	buildings_max_level_factor=1.000

@@ -6,7 +6,7 @@ state={
 	}
 	
 	history={
-		owner = EGY
+		owner = ENE
 		buildings = {
 			dockyard = 2
 			infrastructure = 2
@@ -15,14 +15,14 @@ state={
 			1636 = { naval_base = 1 }
 			3916 = { naval_base = 1 }
 		}
-		add_core_of = EGY
+		add_core_of = ENE
 		victory_points = { 5014 5 }
 
 	}
 	manpower=900000
 	resources={
-		oil=16
-		rubber=10
+		oil=6
+		rubber=4
 	}
 	state_category = large_city
 	buildings_max_level_factor=1.000

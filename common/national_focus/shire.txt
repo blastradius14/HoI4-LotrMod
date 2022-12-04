@@ -5,7 +5,7 @@ focus_tree = {
 		factor=0
 		modifier = {
 			add = 10
-			tag = SHX
+			tag = SHI
 		}
 	}
 
@@ -19,7 +19,8 @@ focus_tree = {
  		id = thefateoftheshire
  		icon = GFX_goal_generic_CAS
  		ai_will_do = { factor = 5 }
-  	x =23
+		relative_position_id = industrial_effort
+  	x =10
   	y =0
   	mutually_exclusive = { }
   	prerequisite = { }
@@ -33,13 +34,14 @@ focus_tree = {
 			id = adifferentapproach
 			icon = GFX_goal_generic_demand_territory
 			ai_will_do = { factor = 7 }
-	 		x =27
+		relative_position_id = thefateoftheshire
+	 		x =5
 	 		y =1
 	 		mutually_exclusive = { focus = traditionalhobbitpacifism }
 	 		prerequisite = { focus = thefateoftheshire}
 	 		cost = 10
 			available_if_capitulated = yes
-			completion_reward = { add_ideas = SHX_different_approach }
+			completion_reward = { add_ideas = SHI_different_approach }
 	 }
 
 	 #Focus for Traditional Hobbit Pacifism
@@ -47,7 +49,8 @@ focus_tree = {
 			id = traditionalhobbitpacifism
 			icon = GFX_goal_generic_national_unity
 			ai_will_do = { factor = 10 }
-	 		x =19
+		relative_position_id = thefateoftheshire
+	 		x =-3
 	 		y =1
 	 		mutually_exclusive = { focus = adifferentapproach}
 	 		prerequisite = { focus = thefateoftheshire}
@@ -63,15 +66,16 @@ focus_tree = {
 			id = maintainrelationswitharthedain
 			icon = GFX_goal_unknown
 			ai_will_do = { factor = 3 }
-	 		x =17
-	 		y =2
+		relative_position_id = traditionalhobbitpacifism
+	 		x =-2
+	 		y =1
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = traditionalhobbitpacifism}
 	 		cost = 10
 	  	available_if_capitulated = yes
 			completion_reward = {
-				ARG = { add_opinion_modifier = { target = SHX modifier = large_increase } }
-				SHX = { add_opinion_modifier = { target = ARG modifier = large_increase } }
+				ART = { add_opinion_modifier = { target = SHI modifier = large_increase } }
+				SHI = { add_opinion_modifier = { target = ART modifier = large_increase } }
 			}
 	 }
 
@@ -80,15 +84,16 @@ focus_tree = {
 			id = improverelationswithrhudaur
 			icon = GFX_goal_unknown
 			ai_will_do = { factor = 4 }
-	 		x =19
-	 		y =2
+		relative_position_id = traditionalhobbitpacifism
+	 		x =0
+	 		y =1
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = traditionalhobbitpacifism}
 	 		cost = 10
 	  	available_if_capitulated = yes
 			completion_reward = {
-				URG = { add_opinion_modifier = { target = SHX modifier = large_increase } }
-				SHX = { add_opinion_modifier = { target = URG modifier = large_increase } }
+				RHD = { add_opinion_modifier = { target = SHI modifier = large_increase } }
+				SHI = { add_opinion_modifier = { target = RHD modifier = large_increase } }
 			}
 	 }
 
@@ -100,13 +105,14 @@ focus_tree = {
 			available = { communism > 0.3 }
 			cancel_if_invalid = no
 	 	  continue_if_invalid = yes
-	 		x =30
-	 		y =2
+		relative_position_id = adifferentapproach
+	 		x =3
+	 		y =1
 	 		mutually_exclusive = { focus = empowertheshirriffs }
 	 		prerequisite = { focus = adifferentapproach}
 	 		cost = 10
 	  	available_if_capitulated = yes
-			completion_reward = { SHX = { set_politics = { ruling_party = communism elections_allowed = no } } remove_ideas = SHX_different_approach add_ideas = generic_communism_intermediate }
+			completion_reward = { SHI = { set_politics = { ruling_party = communism elections_allowed = no } } remove_ideas = SHI_different_approach add_ideas = generic_communism_intermediate }
 	 }
 
 	 #Focus for Improve Relations with Cardolan
@@ -114,15 +120,16 @@ focus_tree = {
 			id = improverelationswithcardolan
 			icon = GFX_goal_unknown
 			ai_will_do = { factor = 4 }
-	 		x =21
-	 		y =2
+		relative_position_id = traditionalhobbitpacifism
+	 		x =2
+	 		y =1
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = traditionalhobbitpacifism}
 	 		cost = 10
 	  	available_if_capitulated = yes
 			completion_reward = {
-				COL = { add_opinion_modifier = { target = SHX modifier = large_increase } }
-				SHX = { add_opinion_modifier = { target = COL modifier = large_increase } }
+				CAR = { add_opinion_modifier = { target = SHI modifier = large_increase } }
+				SHI = { add_opinion_modifier = { target = CAR modifier = large_increase } }
 			}
 	 }
 
@@ -134,13 +141,14 @@ focus_tree = {
 			available = { fascism > 0.3 }
 			cancel_if_invalid = no
 	 	  continue_if_invalid = yes
-	 		x =24
-	 		y =2
+		relative_position_id = adifferentapproach
+	 		x =-3
+	 		y =1
 	 		mutually_exclusive = { focus = empowerthehobbitproletariat}
 	 		prerequisite = { focus = adifferentapproach}
 	 		cost = 10
 	  	available_if_capitulated = yes
-			completion_reward = { add_threat = 2 SHX = { set_politics = { ruling_party = fascism elections_allowed = no } } remove_ideas = SHX_different_approach add_ideas = generic_fascism_intermediate }
+			completion_reward = { add_threat = 2 SHI = { set_politics = { ruling_party = fascism elections_allowed = no } } remove_ideas = SHI_different_approach add_ideas = generic_fascism_intermediate }
 	 }
 
 	 #Focus for Encourage a Reformation of Arthedain
@@ -148,14 +156,15 @@ focus_tree = {
 			id = encourageareformationofarthedain
 			icon = GFX_goal_unknown
 			ai_will_do = { factor = 25 }
-	 		x =16
-	 		y =3
+		relative_position_id = maintainrelationswitharthedain
+	 		x =-1
+	 		y =1
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = maintainrelationswitharthedain}
 	 		cost = 10
 	  	available_if_capitulated = yes
 			completion_reward = {
-				ARG = { add_popularity = { ideology = democratic popularity = 0.1 } }
+				ART = { add_popularity = { ideology = democratic popularity = 0.1 } }
 				set_global_flag = arthedain_reformation_encouraged
 			}
 	 }
@@ -165,8 +174,9 @@ focus_tree = {
 			id = questionarthedainsstrength
 			icon = GFX_focus_generic_self_management
 			ai_will_do = { factor = 3 }
-	 		x =27
-	 		y =3
+		relative_position_id = adifferentapproach
+	 		x =0
+	 		y =2
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = adifferentapproach}
 	 		cost = 10
@@ -175,10 +185,10 @@ focus_tree = {
 				add_threat = 2
 				news_event = { hours = 48 id = news.355 }
 				add_political_power = 70
-				ARG = { add_opinion_modifier = { target = SHX modifier = large_decrease } }
+				ART = { add_opinion_modifier = { target = SHI modifier = large_decrease } }
 				add_autonomy_ratio = {
 					value = 1
-					localization = SHX_question_arthedain_strength
+					localization = SHI_question_arthedain_strength
 			}
 		}
 	 }
@@ -188,14 +198,15 @@ focus_tree = {
 			id = introducethirdbreakfast
 			icon = GFX_goal_generic_consumer_goods
 			ai_will_do = { factor = 7 }
-	 		x =18
-	 		y =3
+		relative_position_id = traditionalhobbitpacifism
+	 		x =-1
+	 		y =2
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = traditionalhobbitpacifism}
 	 		cost = 10
 	  	available_if_capitulated = yes
 			completion_reward = {
-				add_ideas = SHX_third_breakfast
+				add_ideas = SHI_third_breakfast
 				hidden_effect = { news_event = { hours = 48 id = news.354 } }
 			}
 	 }
@@ -205,16 +216,17 @@ focus_tree = {
 			id = mutualprotectionpact
 			icon = GFX_goal_tripartite_pact
 			ai_will_do = { factor = 10 }
-	 		x =20
-	 		y =3
+		relative_position_id = traditionalhobbitpacifism
+	 		x =1
+	 		y =2
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = improverelationswithrhudaur}
 	  	prerequisite = { focus =improverelationswithcardolan}
 	 		cost = 10
 	  	available_if_capitulated = yes
 			completion_reward = {
-				URG = { country_event = { days = 1 id = shire.2 } }
-				COL = { country_event = { days = 1 id = shire.2 } }
+				RHD = { country_event = { days = 1 id = shire.2 } }
+				CAR = { country_event = { days = 1 id = shire.2 } }
 			}
 	 }
 
@@ -223,18 +235,19 @@ focus_tree = {
 			id = conspirewithsaruman
 			icon = GFX_waysofthedark
 			ai_will_do = { factor = 5 }
-			available = { NOT = { has_completed_focus = seekourowndestiny } ISR = { is_in_faction = yes } NOT = { is_puppet = yes } ISR = { has_country_leader = { ruling_only = yes name = "Saruman" } } ISR = { has_government = fascism } }
-	 		x =22
-	 		y =3
+			available = { NOT = { has_completed_focus = seekourowndestiny } ISE = { is_in_faction = yes } NOT = { is_puppet = yes } ISE = { has_country_leader = { ruling_only = yes name = "Saruman" } } ISE = { has_government = fascism } }
+		relative_position_id = empowertheshirriffs
+	 		x =-2
+	 		y =1
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = empowertheshirriffs}
 	 		cost = 10
 	  	available_if_capitulated = yes
 			completion_reward = {
-				if {
-					limit { ISR = { is_faction_leader = yes } }
-					ISR = { add_to_faction = SHX }
-					else = { MON = { add_to_faction = SHX } }
+				if = {
+					limit = { ISE = { is_faction_leader = yes } }
+					ISE = { add_to_faction = SHI }
+					else = { MOR = { add_to_faction = SHI } }
 				}
 			}
 	 }
@@ -244,8 +257,9 @@ focus_tree = {
 			id = adisplayofstrength
 			icon = GFX_goal_demand_sudetenland
 			ai_will_do = { factor = 5 }
-	 		x =24
-	 		y =3
+		relative_position_id = empowertheshirriffs
+	 		x =0
+	 		y =1
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = empowertheshirriffs}
 	 		cost = 10
@@ -256,7 +270,7 @@ focus_tree = {
 				add_ideas = war_economy
 				add_autonomy_ratio = {
 					value = 0.5
-					localization = SHX_display_of_strength
+					localization = SHI_display_of_strength
 				}
 			}
 	 }
@@ -266,15 +280,16 @@ focus_tree = {
 			id = appropriatethefarmland
 			icon = GFX_goal_unknown
 			ai_will_do = { factor = 5 }
-	 		x =30
-	 		y =3
+		relative_position_id = empowerthehobbitproletariat
+	 		x =0
+	 		y =1
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = empowerthehobbitproletariat}
 	 		cost = 10
 	  	available_if_capitulated = yes
 			completion_reward = {
 				add_political_power = -100
-				add_ideas = MEN_government_appropriation
+				add_ideas = MIR_government_appropriation
 				784 = {
 					add_extra_state_shared_building_slots = 2
 				}
@@ -296,15 +311,16 @@ focus_tree = {
 			icon = GFX_goal_tfv_sever_ties_with_uk
 			ai_will_do = { factor = 2 }
 			available = { OR = { has_government = fascism has_government = communism } }
-	 		x =27
-	 		y =4
+		relative_position_id = questionarthedainsstrength
+	 		x =0
+	 		y =1
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = questionarthedainsstrength}
 	 		cost = 10
 	  	available_if_capitulated = yes
 			completion_reward = {
-				ARG = { country_event = { days = 1 id = shire.3 } }
-				ARG = { add_opinion_modifier = { target = SHX modifier = large_decrease } }
+				ART = { country_event = { days = 1 id = shire.3 } }
+				ART = { add_opinion_modifier = { target = SHI modifier = large_decrease } }
 			}
 	 }
 
@@ -312,16 +328,17 @@ focus_tree = {
 			focus = {
 			id = askcardolanforhelp
 			icon = GFX_focus_generic_concessions
-			available = { NOT = { COL = { has_war = yes } } SHX = { has_war = yes } }
+			available = { NOT = { CAR = { has_war = yes } } SHI = { has_war = yes } }
 			ai_will_do = { factor = 30 }
-			x =27
-			y =7
+		relative_position_id = abandonourdunedainoverlords
+			x =0
+			y =3
 			mutually_exclusive = { }
 			prerequisite = { focus = abandonourdunedainoverlords}
 			cost = 10
 			available_if_capitulated = yes
 			completion_reward = {
-				COL = { country_event = { days = 1 id = shire.4 } }
+				CAR = { country_event = { days = 1 id = shire.4 } }
 			}
 	 }
 
@@ -330,14 +347,15 @@ focus_tree = {
 			id = spreadthemessage
 			icon = GFX_goal_generic_propaganda
 			ai_will_do = { factor = 5 }
-	 		x =31
-	 		y =8
+		relative_position_id = thebagginsmanifesto
+	 		x =0
+	 		y =4
 	 		mutually_exclusive = { }
-	 		prerequisite = { focus = SHX_equipmentmodernization focus = SHX_researchfoundation focus = forcedconscription }
+	 		prerequisite = { focus = SHI_equipmentmodernization focus = SHI_researchfoundation focus = forcedconscription }
 	 		cost = 10
 	  	available_if_capitulated = yes
 			completion_reward = {
-				add_ideas = SHX_spread_the_message
+				add_ideas = SHI_spread_the_message
 			}
 	 }
 
@@ -346,14 +364,15 @@ focus_tree = {
 			id = inextricableunity
 			icon = GFX_goal_generic_national_unity
 			ai_will_do = { factor = 15 }
-	 		x =21
-	 		y =4
+		relative_position_id = mutualprotectionpact
+	 		x =1
+	 		y =1
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = mutualprotectionpact}
 	  	prerequisite = { focus =introducethirdbreakfast}
 	 		cost = 10
 	  	available_if_capitulated = yes
-			completion_reward = { add_ideas = SHX_inextricable_unity }
+			completion_reward = { add_ideas = SHI_inextricable_unity }
 	 }
 
 	 #Focus for Unquestioned Authority
@@ -361,13 +380,14 @@ focus_tree = {
 			id = unquestionedauthority
 			icon = GFX_focus_generic_military_mission
 			ai_will_do = { factor = 4 }
-	 		x =23
-	 		y =4
+		relative_position_id = adisplayofstrength
+	 		x =-1
+	 		y =1
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = adisplayofstrength}
 	 		cost = 10
 	  	available_if_capitulated = yes
-			completion_reward = { add_ideas = SHX_unquestioned_authority add_ideas = service_by_requirement }
+			completion_reward = { add_ideas = SHI_unquestioned_authority add_ideas = service_by_requirement }
 	 }
 
 	 #Focus for Militarize the Hobbits!
@@ -375,8 +395,9 @@ focus_tree = {
 			id = militarizethehobbits
 			icon = GFX_goal_generic_political_pressure
 			ai_will_do = { factor = 10 }
-	 		x =25
-	 		y =4
+		relative_position_id = adisplayofstrength
+	 		x =1
+	 		y =1
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = adisplayofstrength}
 	 		cost = 10
@@ -406,38 +427,41 @@ focus_tree = {
 			id = abolishsecondbreakfast
 			icon = GFX_goal_generic_dangerous_deal
 			ai_will_do = { factor = 2 }
-	 		x =26
-	 		y =5
+		relative_position_id = militarizethehobbits
+	 		x =1
+	 		y =1
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = militarizethehobbits}
 	 		cost = 10
 	  	available_if_capitulated = yes
-			completion_reward = { add_ideas = SHX_minimal_diet	}
+			completion_reward = { add_ideas = SHI_minimal_diet	}
 	 }
 
 	 #Focus for Unite with Isengard
 			focus = {
-			id = SHX_unitewithisengard
+			id = SHI_unitewithisengard
 			icon = GFX_unitewithisengard
 			ai_will_do = { factor = 3 }
-	 		x =22
-	 		y =5
+		relative_position_id = conspirewithsaruman
+	 		x =0
+	 		y =2
 	 		mutually_exclusive = { focus = seekourowndestiny }
 	 		prerequisite = { focus = conspirewithsaruman}
 	 		cost = 10
 	  	available_if_capitulated = yes
-			completion_reward = { add_ideas = SHX_saruman_help ISR = { puppet = SHX } }
+			completion_reward = { add_ideas = SHI_saruman_help ISE = { puppet = SHI } }
 	 }
 
 	 #Focus for Encourage Isengard Sovereignty
 			focus = {
-			id = SHX_encourageisengardsovereignity
+			id = SHI_encourageisengardsovereignity
 			icon = GFX_unitewithisengard
 			ai_will_do = { factor = 0 }
-			x =22
-			y =6
+		relative_position_id = conspirewithsaruman
+			x =0
+			y =3
 			mutually_exclusive = { }
-			prerequisite = { focus = SHX_unitewithisengard}
+			prerequisite = { focus = SHI_unitewithisengard}
 			cost = 10
 			available_if_capitulated = yes
 			completion_reward = { set_global_flag = isengard_sovereignity_encouraged }
@@ -445,30 +469,32 @@ focus_tree = {
 
 	 #Focus for Stay true to Saruman
 			focus = {
-			id = SHX_staytruetosaruman
+			id = SHI_staytruetosaruman
 			icon = GFX_unitewithisengard
 			ai_will_do = { factor = 0 }
-			x =21
-			y =7
-			mutually_exclusive = {  focus = SHX_betrayisengard }
-			prerequisite = { focus = SHX_encourageisengardsovereignity}
+		relative_position_id = SHI_encourageisengardsovereignity
+			x =-1
+			y =1
+			mutually_exclusive = {  focus = SHI_betrayisengard }
+			prerequisite = { focus = SHI_encourageisengardsovereignity}
 			cost = 10
 			available_if_capitulated = yes
-			completion_reward = { ISR = { add_to_faction = SHX } }
+			completion_reward = { ISE = { add_to_faction = SHI } }
 	 }
 
 	 #Focus for Betray Isengard
 			focus = {
-			id = SHX_betrayisengard
+			id = SHI_betrayisengard
 			icon = GFX_unitewithsauron
 			ai_will_do = { factor = 0 }
-			x =23
-			y =7
-			mutually_exclusive = { focus = SHX_staytruetosaruman }
-			prerequisite = { focus = SHX_encourageisengardsovereignity}
+		relative_position_id = SHI_encourageisengardsovereignity
+			x =1
+			y =1
+			mutually_exclusive = { focus = SHI_staytruetosaruman }
+			prerequisite = { focus = SHI_encourageisengardsovereignity}
 			cost = 10
 			available_if_capitulated = yes
-			completion_reward = { ISR = { release_puppet = SHX } MON = { puppet = SHX } MON = { add_to_faction = SHX } }
+			completion_reward = { ISE = { release_puppet = SHI } MOR = { puppet = SHI } MOR = { add_to_faction = SHI } }
 	 }
 
 	 #Focus for Seek our own Destiny
@@ -476,17 +502,18 @@ focus_tree = {
 			id = seekourowndestiny
 			icon = GFX_goal_generic_small_arms
 			ai_will_do = { factor = 2 }
-	 		x =24
-	 		y =5
-	 		mutually_exclusive = { focus = SHX_unitewithisengard }
+		relative_position_id = unquestionedauthority
+	 		x =1
+	 		y =1
+	 		mutually_exclusive = { focus = SHI_unitewithisengard }
 	 		prerequisite = { focus = militarizethehobbits}
 	  	prerequisite = { focus =unquestionedauthority}
 	 		cost = 10
 	  	available_if_capitulated = yes
 			completion_reward = {
-				ISR = { remove_from_faction = SHX }
-				MON = { remove_from_faction = SHX }
-				ISR = { add_opinion_modifier = { target = SHX modifier = isr_treason } }
+				ISE = { remove_from_faction = SHI }
+				MOR = { remove_from_faction = SHI }
+				ISE = { add_opinion_modifier = { target = SHI modifier = isr_treason } }
 			}
 	 }
 
@@ -495,13 +522,14 @@ focus_tree = {
 			id = minimaldiet
 			icon = GFX_goal_generic_consumer_goods
 			ai_will_do = { factor = 2 }
-	 		x =26
-	 		y =6
+		relative_position_id = abolishsecondbreakfast
+	 		x =0
+	 		y =1
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = abolishsecondbreakfast}
 	 		cost = 10
 	  	available_if_capitulated = yes
-			completion_reward = { add_ideas = SHX_minimal_diet2	}
+			completion_reward = { add_ideas = SHI_minimal_diet2	}
 	 }
 
 	 #Focus for The First Hobbit Empire
@@ -509,8 +537,9 @@ focus_tree = {
 			id = thefirsthobbitempire
 			icon = GFX_goal_generic_secret_weapon
 			ai_will_do = { factor = 10 }
-	 		x =24
-	 		y =6
+		relative_position_id = seekourowndestiny
+	 		x =0
+	 		y =1
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = seekourowndestiny}
 	 		cost = 10
@@ -526,9 +555,10 @@ focus_tree = {
 			id = transformthehobbitholesintobunkers
 			icon = GFX_goal_generic_fortify_city
 			ai_will_do = { factor = 4 }
-			available = { 783 = { is_controlled_by = SHX } 785 = { is_controlled_by = SHX } 784 = { is_controlled_by = SHX } 779 = { is_controlled_by = SHX } }
-	 		x =25
-	 		y =7
+			available = { 783 = { is_controlled_by = SHI } 785 = { is_controlled_by = SHI } 784 = { is_controlled_by = SHI } 779 = { is_controlled_by = SHI } }
+		relative_position_id = militarizethehobbits
+	 		x =0
+	 		y =3
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = militarizethehobbits}
 	 		cost = 10
@@ -552,8 +582,9 @@ focus_tree = {
 			id = astealthyapproach
 			icon = GFX_goal_generic_wolf_pack
 			ai_will_do = { factor = 2 }
-	 		x =25
-	 		y =8
+		relative_position_id = militarizethehobbits
+	 		x =0
+	 		y =4
 	 		mutually_exclusive = { }
 	 		prerequisite = { focus = transformthehobbitholesintobunkers}
 	 		cost = 10
@@ -581,13 +612,14 @@ focus_tree = {
 			id = thebagginsmanifesto
 			icon = GFX_focus_generic_join_comintern
 			ai_will_do = { factor = 10 }
-	 		x =31
-	 		y =4
+		relative_position_id = appropriatethefarmland
+	 		x =1
+	 		y =1
 	 		mutually_exclusive = { focus = thesackvillemanifesto  focus = thetookmanifesto }
 	 		prerequisite = { focus = appropriatethefarmland }
 	 		cost = 10
 	  	available_if_capitulated = yes
-			completion_reward = { add_ideas = SHX_baggins_manifesto
+			completion_reward = { add_ideas = SHI_baggins_manifesto
 			}
 	 }
 
@@ -596,8 +628,9 @@ focus_tree = {
 			id = industryexpansion
 			icon = GFX_goal_generic_construct_civ_factory
 			ai_will_do = { factor = 10 }
-			x =31
-			y =5
+		relative_position_id = thebagginsmanifesto
+			x =0
+			y =1
 			mutually_exclusive = { }
 			prerequisite = { focus = thebagginsmanifesto }
 			cost = 10
@@ -611,11 +644,12 @@ focus_tree = {
 
 	 #Focus for Industry Modernization
 			focus = {
-			id = SHX_industrymodernization
+			id = SHI_industrymodernization
 			icon = GFX_goal_generic_construct_civilian
 			ai_will_do = { factor = 10 }
-			x =31
-			y =6
+		relative_position_id = thebagginsmanifesto
+			x =0
+			y =2
 			mutually_exclusive = { }
 			prerequisite = { focus = industryexpansion }
 			cost = 10
@@ -625,23 +659,24 @@ focus_tree = {
 		 				name = industrial_bonus
 		 				bonus = 0.3
 		 				uses = 5
-		 				category = industry
+		 				category = lotr_labour_construction_industry
 		 			}
 		 		}
 	 }
 
 	 #Focus for Research Foundation
 			focus = {
-			id = SHX_researchfoundation
+			id = SHI_researchfoundation
 			icon = GFX_goal_tfv_generic_tech_sharing
 			ai_will_do = { factor = 10 }
-			x =31
-			y =7
+		relative_position_id = thebagginsmanifesto
+			x =0
+			y =3
 			mutually_exclusive = { }
-			prerequisite = { focus = SHX_industrymodernization }
+			prerequisite = { focus = SHI_industrymodernization }
 			cost = 10
 			available_if_capitulated = yes
-			completion_reward = { add_ideas = LIT_refined_scientists
+			completion_reward = { add_ideas = LTH_refined_scientists
 			}
 	 }
 
@@ -650,13 +685,14 @@ focus_tree = {
 			id = thesackvillemanifesto
 			icon = GFX_focus_generic_join_comintern
 			ai_will_do = { factor = 10 }
-			x =29
-			y =4
+		relative_position_id = thebagginsmanifesto
+			x =-2
+			y =0
 			mutually_exclusive = { focus = thebagginsmanifesto  focus = thetookmanifesto }
 			prerequisite = { focus = appropriatethefarmland }
 			cost = 10
 			available_if_capitulated = yes
-			completion_reward = { add_ideas = SHX_sackville_manifesto
+			completion_reward = { add_ideas = SHI_sackville_manifesto
 			}
 	 }
 
@@ -665,8 +701,9 @@ focus_tree = {
 			id = commencerearmament
 			icon = GFX_goal_generic_construct_mil_factory
 			ai_will_do = { factor = 10 }
-			x =29
-			y =5
+		relative_position_id = thesackvillemanifesto
+			x =0
+			y =1
 			mutually_exclusive = { }
 			prerequisite = { focus = thesackvillemanifesto }
 			cost = 10
@@ -679,11 +716,12 @@ focus_tree = {
 
 	 #Focus for War Preparations
 			focus = {
-			id = SHX_warpreparations
+			id = SHI_warpreparations
 			icon = GFX_goal_generic_position_armies
 			ai_will_do = { factor = 10 }
-			x =29
-			y =6
+		relative_position_id = thesackvillemanifesto
+			x =0
+			y =2
 			mutually_exclusive = { }
 			prerequisite = { focus = commencerearmament }
 			cost = 10
@@ -696,21 +734,22 @@ focus_tree = {
 
 	 #Focus for Equipment Modernization
 			focus = {
-			id = SHX_equipmentmodernization
+			id = SHI_equipmentmodernization
 			icon = GFX_goal_generic_army_artillery2
 			ai_will_do = { factor = 10 }
-			x =29
-			y =7
+		relative_position_id = thesackvillemanifesto
+			x =0
+			y =3
 			mutually_exclusive = { }
-			prerequisite = { focus = SHX_warpreparations }
+			prerequisite = { focus = SHI_warpreparations }
 			cost = 10
 			available_if_capitulated = yes
 			completion_reward = {
 				add_tech_bonus = {
-					name = JOR_standardisation_of_equipment
+					name = ROH_standardisation_of_equipment
 					bonus = 0.5
 					uses = 2
-					category = infantry_weapons
+					category = lotr_infantry_weapons
 				}
 			}
 	 }
@@ -720,13 +759,14 @@ focus_tree = {
 			id = thetookmanifesto
 			icon = GFX_focus_generic_join_comintern
 			ai_will_do = { factor = 10 }
-			x =33
-			y =4
+		relative_position_id = thebagginsmanifesto
+			x =2
+			y =0
 			mutually_exclusive = { focus = thesackvillemanifesto  focus = thebagginsmanifesto }
 			prerequisite = { focus = appropriatethefarmland }
 			cost = 10
 			available_if_capitulated = yes
-			completion_reward = { add_ideas = SHX_took_manifesto
+			completion_reward = { add_ideas = SHI_took_manifesto
 			}
 	 }
 
@@ -735,8 +775,9 @@ focus_tree = {
 			id = purgethesackvillebagginses
 			icon = GFX_goal_generic_war_with_comintern
 			ai_will_do = { factor = 10 }
-			x =33
-			y =5
+		relative_position_id = thetookmanifesto
+			x =0
+			y =1
 			mutually_exclusive = { }
 			prerequisite = { focus = thetookmanifesto }
 			cost = 10
@@ -755,14 +796,15 @@ focus_tree = {
 			id = recruitmentpropaganda
 			icon = GFX_goal_generic_propaganda
 			ai_will_do = { factor = 10 }
-			x =33
-			y =6
+		relative_position_id = thetookmanifesto
+			x =0
+			y =2
 			mutually_exclusive = { }
 			prerequisite = { focus = purgethesackvillebagginses }
 			cost = 10
 			available_if_capitulated = yes
 			completion_reward = {
-				add_ideas = SHX_recruitment_propaganda
+				add_ideas = SHI_recruitment_propaganda
 			}
 	 }
 
@@ -771,14 +813,15 @@ focus_tree = {
 			id = forcedconscription
 			icon = GFX_focus_generic_military_mission
 			ai_will_do = { factor = 10 }
-			x =33
-			y =7
+		relative_position_id = thetookmanifesto
+			x =0
+			y =3
 			mutually_exclusive = { }
 			prerequisite = { focus = recruitmentpropaganda }
 			cost = 10
 			available_if_capitulated = yes
 			completion_reward = {
-					add_ideas = SHX_forced_conscription
+					add_ideas = SHI_forced_conscription
 			}
 	 }
 
@@ -790,1615 +833,11 @@ focus_tree = {
 
 
 #############################################default focuses
-	focus = {
-		id = SHX_army_effort
-		icon = GFX_goal_generic_allies_build_infantry
-		x = 1
-		y = 0
-		cost = 10
+shared_focus = army_effort
+shared_focus = aviation_effort
+shared_focus = naval_effort
+shared_focus = industrial_effort
+	
 
-		available_if_capitulated = yes
-
-		completion_reward = {
-			army_experience = 5
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 0.5
-				uses = 1
-				category = land_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_equipment_effort
-		icon = GFX_goal_generic_small_arms
-		prerequisite = { focus = SHX_army_effort }
-		x = 0
-		y = 1
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = infantry_weapons_bonus
-				bonus = 0.5
-				uses = 1
-				category = infantry_weapons
-				category = artillery
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_motorization_effort
-		icon = GFX_goal_generic_army_motorized
-		prerequisite = { focus = SHX_army_effort }
-		bypass = { has_tech = motorised_infantry }
-		x = 2
-		y = 1
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				bonus = 0.75
-				technology = motorised_infantry
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_doctrine_effort
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = SHX_army_effort }
-		x = 1
-		y = 2
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			army_experience = 5
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 0.5
-				uses = 1
-				category = land_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_SHX_equipment_effort_2
-		icon = GFX_goal_generic_army_artillery
-		prerequisite = { focus = SHX_equipment_effort }
-		x = 0
-		y = 3
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				bonus = 0.5
-				uses = 1
-				category = infantry_weapons
-				category = artillery
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_mechanization_effort
-		icon = GFX_goal_generic_build_tank
-		prerequisite = { focus = SHX_motorization_effort }
-		x = 2
-		y = 3
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = motorized_bonus
-				ahead_reduction = 0.5
-				uses = 1
-				category = motorized_equipment
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_SHX_doctrine_effort_2
-		icon = GFX_goal_generic_army_doctrines
-		prerequisite = { focus = SHX_doctrine_effort }
-		x = 1
-		y = 4
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			army_experience = 5
-			add_tech_bonus = {
-				name = land_doc_bonus
-				bonus = 0.5
-				uses = 1
-				category = land_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_SHX_equipment_effort_3
-		icon = GFX_goal_generic_army_artillery2
-		prerequisite = { focus = SHX_SHX_equipment_effort_2 }
-		x = 0
-		y = 5
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = infantry_artillery_bonus
-				ahead_reduction = 1
-				uses = 1
-				category = infantry_weapons
-				category = artillery
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_armor_effort
-		icon = GFX_goal_generic_army_tanks
-		prerequisite = { focus = SHX_mechanization_effort }
-		x = 2
-		y = 5
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = armor_bonus
-				bonus = 0.5
-				uses = 2
-				category = armor
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_special_forces
-		icon = GFX_goal_generic_SHX_special_forces
-		prerequisite = { focus = SHX_SHX_equipment_effort_3 }
-		prerequisite = { focus = SHX_SHX_doctrine_effort_2 }
-		prerequisite = { focus = SHX_armor_effort }
-		x = 1
-		y = 6
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = SHX_special_forces_bonus
-				bonus = 0.5
-				uses = 1
-				technology = paratroopers
-				technology = paratroopers2
-				technology = marines
-				technology = marines2
-				technology = tech_mountaineers
-				technology = tech_mountaineers2
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_aviation_effort
-		icon = GFX_goal_generic_build_airforce
-		x = 5
-		y = 0
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		complete_tooltip = {
-			air_experience = 25
-			if = { limit = { has_country_flag = SHX_aviation_effort_AB }
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes
-				}
-			}
-			add_tech_bonus = {
-				name = air_doc_bonus
-				bonus = 0.5
-				uses = 1
-				category = air_doctrine
-			}
-		}
-
-		completion_reward = {
-			air_experience = 25
-
-			if = {
-				limit = {
-					capital_scope = {
-						NOT = {
-							free_building_slots = {
-								building = air_base
-								size > 1
-							}
-						}
-					}
-				}
-				random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = air_base
-							size > 1
-						}
-					}
-					add_building_construction = {
-						type = air_base
-						level = 2
-						instant_build = yes
-					}
-					ROOT = { set_country_flag = SHX_aviation_effort_AB }
-				}
-			}
-			if = {
-				limit = {
-					capital_scope = {
-						free_building_slots = {
-							building = air_base
-							size > 1
-						}
-					}
-				}
-				capital_scope = {
-					add_building_construction = {
-						type = air_base
-						level = 2
-						instant_build = yes
-					}
-					ROOT = { set_country_flag = SHX_aviation_effort_AB }
-				}
-			}
-			add_tech_bonus = {
-				name = air_doc_bonus
-				bonus = 0.5
-				uses = 1
-				category = air_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_fighter_focus
-		icon = GFX_goal_generic_air_fighter
-		prerequisite = { focus = SHX_aviation_effort }
-		mutually_exclusive = { focus = SHX_bomber_focus }
-		x = 4
-		y = 1
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = fighter_bonus
-				bonus = 0.5
-				uses = 2
-				technology = early_fighter
-				technology = fighter1
-				technology = fighter2
-				technology = fighter3
-				technology = heavy_fighter1
-				technology = heavy_fighter2
-				technology = heavy_fighter3
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_bomber_focus
-		icon = GFX_goal_generic_air_bomber
-		prerequisite = { focus = SHX_aviation_effort }
-		mutually_exclusive = { focus = SHX_fighter_focus }
-		x = 6
-		y = 1
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = bomber_bonus
-				bonus = 0.5
-				uses = 2
-				technology = strategic_bomber1
-				technology = strategic_bomber2
-				technology = strategic_bomber3
-				category = tactical_bomber
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_SHX_aviation_effort_2
-		icon = GFX_goal_generic_air_doctrine
-		prerequisite = { focus = SHX_bomber_focus focus = SHX_fighter_focus }
-		x = 5
-		y = 2
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		complete_tooltip = {
-			air_experience = 25
-			if = { limit = { has_country_flag = SHX_SHX_aviation_effort_2_AB }
-				add_building_construction = {
-					type = air_base
-					level = 2
-					instant_build = yes
-				}
-			}
-			add_tech_bonus = {
-				name =  air_doc_bonus
-				bonus = 0.5
-				uses = 1
-				category = air_doctrine
-			}
-		}
-		completion_reward = {
-			air_experience = 25
-			if = {
-				limit = {
-					capital_scope = {
-						OR = {
-							NOT = { is_controlled_by = ROOT }
-							NOT = {
-								free_building_slots = {
-									building = air_base
-									size > 1
-								}
-							}
-						}
-					}
-				}
-				random_owned_controlled_state = {
-					limit = {
-						free_building_slots = {
-							building = air_base
-							size > 1
-						}
-					}
-					add_building_construction = {
-						type = air_base
-						level = 2
-						instant_build = yes
-					}
-					ROOT = { set_country_flag = SHX_SHX_aviation_effort_2_AB }
-				}
-			}
-			if = {
-				limit = {
-					capital_scope = {
-						is_controlled_by = ROOT
-						free_building_slots = {
-							building = air_base
-							size > 1
-						}
-					}
-				}
-				capital_scope = {
-					add_building_construction = {
-						type = air_base
-						level = 2
-						instant_build = yes
-					}
-					ROOT = { set_country_flag = SHX_SHX_aviation_effort_2_AB }
-				}
-			}
-			add_tech_bonus = {
-				name =  air_doc_bonus
-				bonus = 0.5
-				uses = 1
-				category = air_doctrine
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_CAS_effort
-		icon = GFX_goal_generic_CAS
-		prerequisite = { focus = SHX_SHX_aviation_effort_2 }
-		prerequisite = { focus = SHX_motorization_effort }
-		x = 4
-		y = 3
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = CAS_bonus
-				bonus = 0.5
-				ahead_reduction = 1
-				uses = 1
-				category = cas_bomber
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_rocket_effort
-		icon = GFX_focus_rocketry
-		prerequisite = { focus = SHX_SHX_aviation_effort_2 }
-		prerequisite = { focus = SHX_infrastructure_effort }
-		x = 5
-		y = 4
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = jet_rocket_bonus
-				ahead_reduction = 0.5
-				uses = 2
-				category = rocketry
-				category = jet_technology
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.25
-				always = yes
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_NAV_effort
-		icon = GFX_goal_generic_air_naval_bomber
-		prerequisite = { focus = SHX_SHX_aviation_effort_2 }
-		prerequisite = { focus = SHX_flexible_navy }
-		x = 6
-		y = 3
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = nav_bomber_bonus
-				bonus = 0.5
-				ahead_reduction = 1
-				uses = 1
-				category = naval_bomber
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_naval_effort
-		icon = GFX_goal_generic_construct_naval_dockyard
-		x = 9
-		y = 0
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		available = {
-			any_state = {
-				is_coastal = yes
-				is_controlled_by = ROOT
-			}
-		}
-
-		complete_tooltip = {
-			navy_experience = 25
-			add_extra_state_shared_building_slots = 3
-			add_building_construction = {
-				type = dockyard
-				level = 3
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			navy_experience = 25
-			if = {
-				limit = {
-					NOT = {
-						any_owned_state = {
-							dockyard > 0
-							free_building_slots = {
-								building = dockyard
-								size > 2
-								include_locked = yes
-							}
-						}
-					}
-					any_owned_state = {
-						is_coastal = yes
-					}
-				}
-				random_owned_controlled_state = {
-					limit = {
-						is_coastal = yes
-						free_building_slots = {
-							building = dockyard
-							size > 2
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = dockyard
-						level = 3
-						instant_build = yes
-					}
-				}
-				set_country_flag = SHX_naval_effort_built
-			}
-			if = {
-				limit = {
-					NOT = { has_country_flag = SHX_naval_effort_built }
-					any_owned_state = {
-						dockyard > 0
-						free_building_slots = {
-							building = dockyard
-							size > 2
-							include_locked = yes
-						}
-					}
-				}
-				random_owned_controlled_state = {
-					limit = {
-						dockyard > 0
-						free_building_slots = {
-							building = dockyard
-							size > 2
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = dockyard
-						level = 3
-						instant_build = yes
-					}
-				}
-				set_country_flag = SHX_naval_effort_built
-			}
-			if = {
-				limit = {
-					NOT = { has_country_flag = SHX_naval_effort_built }
-					NOT = {
-						any_owned_state = {
-							free_building_slots = {
-								building = dockyard
-								size > 2
-								include_locked = yes
-							}
-						}
-					}
-				}
-				random_state = {
-					limit = {
-						controller = { tag = ROOT }
-						free_building_slots = {
-							building = dockyard
-							size > 2
-							include_locked = yes
-						}
-					}
-					add_extra_state_shared_building_slots = 3
-					add_building_construction = {
-						type = dockyard
-						level = 3
-						instant_build = yes
-					}
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_flexible_navy
-		icon = GFX_goal_generic_build_navy
-		prerequisite = { focus = SHX_naval_effort }
-		mutually_exclusive = { focus = SHX_large_navy }
-		x = 8
-		y = 1
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				all_owned_state = {
-					OR = {
-						is_coastal = no
-						dockyard < 1
-					}
-				}
-			}
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = sub_op_bonus
-				bonus = 0.5
-				uses = 2
-				technology = convoy_interdiction_ti
-				technology = unrestricted_submarine_warfare
-				technology = wolfpacks
-				technology = advanced_submarine_warfare
-				technology = combined_operations_raiding
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_large_navy
-		icon = GFX_goal_generic_navy_doctrines_tactics
-		prerequisite = { focus = SHX_naval_effort }
-		mutually_exclusive = { focus = SHX_flexible_navy }
-		x = 10
-		y = 1
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				all_owned_state = {
-					OR = {
-						is_coastal = no
-						dockyard < 1
-					}
-				}
-			}
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = fleet_in_being_bonus
-				bonus = 0.5
-				uses = 2
-				category = fleet_in_being_tree
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_submarine_effort
-		icon = GFX_goal_generic_navy_submarine
-		prerequisite = { focus = SHX_flexible_navy focus = SHX_large_navy }
-		x = 8
-		y = 2
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				all_owned_state = {
-					OR = {
-						is_coastal = no
-						dockyard < 1
-					}
-				}
-			}
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = ss_bonus
-				bonus = 0.5
-				ahead_reduction = 1
-				uses = 1
-				technology = early_submarine
-				technology = basic_submarine
-				technology = improved_submarine
-				technology = advanced_submarine
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_cruiser_effort
-		icon = GFX_goal_generic_navy_cruiser
-		prerequisite = { focus = SHX_large_navy focus = SHX_flexible_navy }
-		x = 10
-		y = 2
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				all_owned_state = {
-					OR = {
-						is_coastal = no
-						dockyard < 1
-					}
-				}
-			}
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = cr_bonus
-				bonus = 0.5
-				ahead_reduction = 1
-				uses = 1
-				technology = improved_light_cruiser
-				technology = advanced_light_cruiser
-				technology = improved_heavy_cruiser
-				technology = advanced_heavy_cruiser
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_destroyer_effort
-		icon = GFX_goal_generic_wolf_pack
-		prerequisite = { focus = SHX_submarine_effort }
-		x = 8
-		y = 3
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				all_owned_state = {
-					OR = {
-						is_coastal = no
-						dockyard < 1
-					}
-				}
-			}
-		}
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = dd_bonus
-				bonus = 0.5
-				ahead_reduction = 1
-				uses = 1
-				technology = early_destroyer
-				technology = basic_destroyer
-				technology = improved_destroyer
-				technology = advanced_destroyer
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_capital_ships_effort
-		icon = GFX_goal_generic_navy_battleship
-		prerequisite = { focus = SHX_cruiser_effort }
-		x = 10
-		y = 3
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0
-				all_owned_state = {
-					OR = {
-						is_coastal = no
-						dockyard < 1
-					}
-				}
-			}
-		}
-
-		completion_reward = {
-			navy_experience = 25
-			add_tech_bonus = {
-				name = capital_ships_bonus
-				bonus = 0.5
-				ahead_reduction = 1
-				uses = 1
-				technology = basic_battlecruiser
-				technology = basic_battleship
-				technology = improved_battleship
-				technology = advanced_battleship
-				technology = heavy_battleship
-				technology = heavy_battleship2
-				technology = early_carrier
-				technology = basic_carrier
-				technology = improved_carrier
-				technology = advanced_carrier
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_industrial_effort
-		icon = GFX_goal_generic_production
-		x = 13
-		y = 0
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = industrial_bonus
-				bonus = 0.5
-				uses = 1
-				category = industry
-			}
-		}
-
-		ai_will_do = {
-			factor = 3
-			modifier = {
-				factor = 0
-				date < 3021.1.1
-				OR = {
-					# we dont want chinese minors to go crazy on slots early since they get eaten
-					tag = GXC
-					tag = YUN
-					tag = SHX
-					tag = XSM
-					tag = BEL
-					tag = LUX
-					tag = HOL
-					tag = DEN
-
-					# we also dont want tiny nations to go crazy with slots right away
-					num_of_controlled_states < 2
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_construction_effort
-		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = SHX_industrial_effort }
-		x = 12
-		y = 1
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-
-		ai_will_do = {
-			factor = 2
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = SHX_construction_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 1
-						include_locked = yes
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_production_effort
-		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = SHX_industrial_effort }
-		x = 14
-		y = 1
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 2
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = SHX_production_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = arms_factory
-						size < 1
-						include_locked = yes
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_SHX_construction_effort_2
-		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = SHX_construction_effort }
-		x = 12
-		y = 2
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 2
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = SHX_construction_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 1
-						include_locked = yes
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = industrial_complex
-				level = 1
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_SHX_production_effort_2
-		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = SHX_production_effort }
-		x = 14
-		y = 2
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 2
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = SHX_production_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = arms_factory
-						size < 1
-						include_locked = yes
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_infrastructure_effort
-		icon = GFX_goal_generic_construct_infrastructure
-		prerequisite = { focus = SHX_SHX_construction_effort_2 }
-		x = 12
-		y = 3
-		cost = 10
-
-		available_if_capitulated = yes
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = SHX_infrastructure_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = infrastructure
-						size < 1
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = infrastructure
-						size > 0
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = infrastructure
-						size > 1
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 1
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_SHX_production_effort_3
-		icon = GFX_goal_generic_construct_mil_factory
-		prerequisite = { focus = SHX_SHX_production_effort_2 }
-		x = 14
-		y = 3
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 2
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = SHX_production_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = arms_factory
-						size < 1
-						include_locked = yes
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 1
-			add_building_construction = {
-				type = arms_factory
-				level = 1
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = arms_factory
-						size > 0
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = arms_factory
-										size > 0
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_SHX_infrastructure_effort_2
-		icon = GFX_goal_generic_construct_infrastructure
-		prerequisite = { focus = SHX_infrastructure_effort }
-		x = 12
-		y = 4
-		cost = 10
-
-		available_if_capitulated = yes
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = SHX_infrastructure_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = infrastructure
-						size < 1
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-			add_building_construction = {
-				type = infrastructure
-				level = 1
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = infrastructure
-						size > 0
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 0
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = infrastructure
-						size > 1
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = infrastructure
-										size > 1
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_building_construction = {
-					type = infrastructure
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_SHX_construction_effort_3
-		icon = GFX_goal_generic_construct_civ_factory
-		prerequisite = { focus = SHX_infrastructure_effort }
-		x = 14
-		y = 4
-		cost = 10
-
-		available_if_capitulated = yes
-
-
-		ai_will_do = {
-			factor = 2
-		}
-
-		bypass = {
-			custom_trigger_tooltip = {
-				tooltip = SHX_construction_effort_tt
-				all_owned_state = {
-					free_building_slots = {
-						building = industrial_complex
-						size < 2
-						include_locked = yes
-					}
-				}
-			}
-		}
-
-		complete_tooltip = {
-			add_extra_state_shared_building_slots = 2
-			add_building_construction = {
-				type = industrial_complex
-				level = 2
-				instant_build = yes
-			}
-		}
-
-		completion_reward = {
-			random_owned_controlled_state = {
-				limit = {
-					free_building_slots = {
-						building = industrial_complex
-						size > 1
-						include_locked = yes
-					}
-					OR = {
-						is_in_home_area = yes
-						NOT = {
-							owner = {
-								any_owned_state = {
-									free_building_slots = {
-										building = industrial_complex
-										size > 1
-										include_locked = yes
-									}
-									is_in_home_area = yes
-								}
-							}
-						}
-					}
-				}
-				add_extra_state_shared_building_slots = 2
-				add_building_construction = {
-					type = industrial_complex
-					level = 2
-					instant_build = yes
-				}
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_nuclear_effort
-		icon = GFX_focus_wonderweapons
-		prerequisite = { focus = SHX_SHX_infrastructure_effort_2 }
-		x = 10
-		y = 5
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = nuclear_bonus
-				ahead_reduction = 0.5
-				category = nuclear
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.25
-				always = yes
-			}
-		}
-	}
-
-	focus = {
-		id = SHX_extra_tech_slot
-		icon = GFX_focus_research
-		prerequisite = { focus = SHX_SHX_infrastructure_effort_2 }
-		x = 12
-		y = 5
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	focus = {
-		id = SHX_SHX_extra_tech_slot_2
-		icon = GFX_focus_research
-		prerequisite = { focus = SHX_extra_tech_slot }
-		available = {
-			num_of_factories > 50
-		}
-		cancel_if_invalid = no
-		continue_if_invalid = yes
-		x = 12
-		y = 6
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_research_slot = 1
-		}
-	}
-
-	focus = {
-		id = SHX_secret_weapons
-		icon = GFX_goal_generic_secret_weapon
-		prerequisite = { focus = SHX_SHX_infrastructure_effort_2 }
-		x = 14
-		y = 5
-		cost = 10
-
-		available_if_capitulated = yes
-
-		completion_reward = {
-			add_tech_bonus = {
-				name = secret_bonus
-				bonus = 0.5
-				uses = 4
-				category = electronics
-				category = nuclear
-				category = rocketry
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.25
-				always = yes
-			}
-		}
-	}
 
 }

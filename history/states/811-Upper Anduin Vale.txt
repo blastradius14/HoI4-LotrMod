@@ -7,17 +7,16 @@ state={
 	resources = {
 		chromium=24
 		oil=6
-		rubber=26
 	}
 	history={
-		owner = ALB
+		owner = VAL
 		buildings = {
 			infrastructure = 3
 			air_base = 1
 			arms_factory = 2
 			industrial_complex = 3
 		}
-		add_core_of = ALB
+		add_core_of = VAL
 		victory_points = { 4209 10 }
 	}
 	manpower=2000000

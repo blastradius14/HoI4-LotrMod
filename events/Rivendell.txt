@@ -10,30 +10,30 @@ country_event = {
 	title = rivendell.1.t
 	desc = rivendell.1.d
 	picture = GFX_report_event_ring
-	
+
 	fire_only_once = yes
-	
+
 	trigger = {
-		tag = SYR
-		date > 3018.12.1 
+		tag = RIV
+		date > 3018.12.1
 		NOT = { has_global_flag = ring_found }
 	}
 
 	mean_time_to_happen = {
-		days = 30	
+		days = 30
 	}
-	
-	option = { 
+
+	option = {
 		name = rivendell.1.a
 		set_global_flag = fellowship_departed
 		hidden_effect = {
 			news_event = { hours = 24 id = news.332 }
-			MEN = { country_event = { days = 2 id = rivendell.2 } }
-			ECU = { country_event = { days = 2 id = rivendell.3 } }
-			GEO = { country_event = { days = 2 id = rivendell.4 } }
+			MIR = { country_event = { days = 2 id = rivendell.2 } }
+			ERE = { country_event = { days = 2 id = rivendell.3 } }
+			GON = { country_event = { days = 2 id = rivendell.4 } }
 		}
 	}
-	
+
 }
 
 # Mirkwood asked about the Fellowship
@@ -42,11 +42,11 @@ country_event = {
 	title = rivendell.2.t
 	desc = rivendell.2.d
 	picture = GFX_report_event_paper
-	
+
 	fire_only_once = yes
-	
+
 	is_triggered_only = yes
-	
+
 		option = { #Legolas
 		name = rivendell.2.a
 		ai_chance = {
@@ -54,7 +54,7 @@ country_event = {
 		}
 		custom_effect_tooltip = rivendell.2.a.tt
 		set_global_flag = fs_mirkwood_2
-		remove_unit_leader = 2002
+		MIR_legolas = { retire = yes }
 	}
 	option = { #Tauriel
 		name = rivendell.2.b
@@ -67,7 +67,7 @@ country_event = {
 		}
 		custom_effect_tooltip = rivendell.2.b.tt
 		set_global_flag = fs_mirkwood_1
-		remove_unit_leader = 2001
+		MIR_tauriel = { retire = yes }
 	}
 	option = { #Noone
 		name = rivendell.2.c
@@ -89,11 +89,11 @@ country_event = {
 	title = rivendell.3.t
 	desc = rivendell.3.d
 	picture = GFX_report_event_paper
-	
+
 	fire_only_once = yes
-	
+
 	is_triggered_only = yes
-	
+
 		option = { #Gimli
 		name = rivendell.3.a
 		ai_chance = {
@@ -101,7 +101,7 @@ country_event = {
 		}
 		custom_effect_tooltip = rivendell.3.a.tt
 		set_global_flag = fs_erebor_2
-		remove_unit_leader = 3002
+		ERE_gimli = { retire = yes }
 	}
 	option = { #Bombur
 		name = rivendell.3.b
@@ -114,7 +114,7 @@ country_event = {
 		}
 		custom_effect_tooltip = rivendell.3.b.tt
 		set_global_flag = fs_erebor_1
-		remove_unit_leader = 3001
+		ERE_bombur = { retire = yes }
 	}
 	option = { #Noone
 		name = rivendell.3.c
@@ -136,11 +136,11 @@ country_event = {
 	title = rivendell.4.t
 	desc = rivendell.4.d
 	picture = GFX_report_event_paper
-	
+
 	fire_only_once = yes
-	
+
 	is_triggered_only = yes
-	
+
 	option = { #Boromir
 		name = rivendell.4.a
 		ai_chance = {
@@ -148,7 +148,7 @@ country_event = {
 		}
 		custom_effect_tooltip = rivendell.4.a.tt
 		set_global_flag = fs_gondor_2
-		remove_unit_leader = 4002
+		GON_boromir = { retire = yes }
 	}
 	option = { #Faramir
 		name = rivendell.4.b
@@ -161,7 +161,7 @@ country_event = {
 		}
 		custom_effect_tooltip = rivendell.4.b.tt
 		set_global_flag = fs_gondor_1
-		remove_unit_leader = 4001
+		GON_faramir = { retire = yes }
 	}
 	option = { #Noone
 		name = rivendell.4.c
@@ -183,11 +183,11 @@ country_event = {
 	title = rivendell.5.t
 	desc = rivendell.5.d
 	picture = GFX_report_event_alliance
-	
+
 	fire_only_once = yes
-	
+
 	is_triggered_only = yes
-	
+
 		option = { #Accept
 		name = rivendell.5.a
 		ai_chance = {
@@ -195,8 +195,8 @@ country_event = {
 		}
 		set_global_flag = elven_treaty_lorien
 		if = {
-			limit = { NOT = { LIT = { has_war_with = SYR } } }
-			LIT = { diplomatic_relation = { country = SYR relation = non_aggression_pact } }
+			limit = { NOT = { LTH = { has_war_with = RIV } } }
+			LTH = { diplomatic_relation = { country = RIV relation = non_aggression_pact } }
 		}
 	}
 	option = { #Refuse
@@ -205,11 +205,11 @@ country_event = {
 			base = 40
 			modifier = {
 				add = 50
-				LIT = { has_government = fascism }
+				LTH = { has_government = fascism }
 			}
 			modifier = {
 				add = 50
-				LIT = { has_government = communism }
+				LTH = { has_government = communism }
 			}
 		}
 	}
@@ -222,11 +222,11 @@ country_event = {
 	title = rivendell.6.t
 	desc = rivendell.6.d
 	picture = GFX_report_event_alliance
-	
+
 	fire_only_once = yes
-	
+
 	is_triggered_only = yes
-	
+
 		option = { #Accept
 		name = rivendell.6.a
 		ai_chance = {
@@ -234,8 +234,8 @@ country_event = {
 		}
 		set_global_flag = elven_treaty_mirkwood
 		if = {
-			limit = { NOT = { MEN = { has_war_with = SYR } } }
-			MEN = { diplomatic_relation = { country = SYR relation = non_aggression_pact } }
+			limit = { NOT = { MIR = { has_war_with = RIV } } }
+			MIR = { diplomatic_relation = { country = RIV relation = non_aggression_pact } }
 		}
 	}
 	option = { #Refuse
@@ -244,11 +244,11 @@ country_event = {
 			base = 40
 			modifier = {
 				add = 50
-				MEN = { has_government = fascism }
+				MIR = { has_government = fascism }
 			}
 			modifier = {
 				add = 50
-				MEN = { has_government = communism }
+				MIR = { has_government = communism }
 			}
 		}
 	}
@@ -260,11 +260,11 @@ country_event = {
 	title = rivendell.7.t
 	desc = rivendell.7.d
 	picture = GFX_report_event_alliance
-	
+
 	fire_only_once = yes
-	
+
 	is_triggered_only = yes
-	
+
 		option = { #Accept
 		name = rivendell.7.a
 		ai_chance = {
@@ -272,8 +272,8 @@ country_event = {
 		}
 		set_global_flag = elven_treaty_lindon
 		if = {
-			limit = { NOT = { LEB = { has_war_with = SYR } } }
-			LEB = { diplomatic_relation = { country = SYR relation = non_aggression_pact } }
+			limit = { NOT = { LIN = { has_war_with = RIV } } }
+			LIN = { diplomatic_relation = { country = RIV relation = non_aggression_pact } }
 		}
 	}
 	option = { #Refuse
@@ -282,11 +282,11 @@ country_event = {
 			base = 40
 			modifier = {
 				add = 50
-				LEB = { has_government = fascism }
+				LIN = { has_government = fascism }
 			}
 			modifier = {
 				add = 50
-				LEB = { has_government = communism }
+				LIN = { has_government = communism }
 			}
 		}
 	}
@@ -298,19 +298,19 @@ country_event = {
 	title = rivendell.8.t
 	desc = rivendell.8.d
 	picture = GFX_report_event_alliance
-	
+
 	fire_only_once = yes
-	
+
 	is_triggered_only = yes
-	
+
 		option = { #Accept
 		name = rivendell.8.a
 		ai_chance = {
 			base = 80
 		}
 		if = {
-			limit = { NOT = { ARG = { has_war_with = SYR } } }
-			ARG = { diplomatic_relation = { country = SYR relation = non_aggression_pact } }
+			limit = { NOT = { ART = { has_war_with = RIV } } }
+			ART = { diplomatic_relation = { country = RIV relation = non_aggression_pact } }
 		}
 	}
 	option = { #Refuse
@@ -319,11 +319,11 @@ country_event = {
 			base = 40
 			modifier = {
 				add = 50
-				ARG = { has_government = fascism }
+				ART = { has_government = fascism }
 			}
 			modifier = {
 				add = 50
-				ARG = { has_government = communism }
+				ART = { has_government = communism }
 			}
 		}
 	}
@@ -335,19 +335,19 @@ country_event = {
 	title = rivendell.9.t
 	desc = rivendell.9.d
 	picture = GFX_report_event_alliance
-	
+
 	fire_only_once = yes
-	
+
 	is_triggered_only = yes
-	
+
 		option = { #Accept
 		name = rivendell.9.a
 		ai_chance = {
 			base = 80
 		}
 		if = {
-			limit = { NOT = { URG = { has_war_with = SYR } } }
-			URG = { diplomatic_relation = { country = SYR relation = non_aggression_pact } }
+			limit = { NOT = { RHD = { has_war_with = RIV } } }
+			RHD = { diplomatic_relation = { country = RIV relation = non_aggression_pact } }
 		}
 	}
 	option = { #Refuse
@@ -356,11 +356,11 @@ country_event = {
 			base = 40
 			modifier = {
 				add = 50
-				URG = { has_government = fascism }
+				RHD = { has_government = fascism }
 			}
 			modifier = {
 				add = 50
-				URG = { has_government = communism }
+				RHD = { has_government = communism }
 			}
 		}
 	}
@@ -372,19 +372,19 @@ country_event = {
 	title = rivendell.10.t
 	desc = rivendell.10.d
 	picture = GFX_report_event_alliance
-	
+
 	fire_only_once = yes
-	
+
 	is_triggered_only = yes
-	
+
 		option = { #Accept
 		name = rivendell.10.a
 		ai_chance = {
 			base = 80
 		}
 		if = {
-			limit = { NOT = { COL = { has_war_with = SYR } } }
-			COL = { diplomatic_relation = { country = SYR relation = non_aggression_pact } }
+			limit = { NOT = { CAR = { has_war_with = RIV } } }
+			CAR = { diplomatic_relation = { country = RIV relation = non_aggression_pact } }
 		}
 	}
 	option = { #Refuse
@@ -393,11 +393,11 @@ country_event = {
 			base = 40
 			modifier = {
 				add = 50
-				COL = { has_government = fascism }
+				CAR = { has_government = fascism }
 			}
 			modifier = {
 				add = 50
-				COL = { has_government = communism }
+				CAR = { has_government = communism }
 			}
 		}
 	}
@@ -409,15 +409,15 @@ country_event = {
 	title = rivendell.11.t
 	desc = rivendell.11.d
 	picture = GFX_report_event_alliance
-	
+
 	is_triggered_only = yes
-	
+
 	option = { #Accept
 		name = rivendell.11.a
 		ai_chance = {
 			base = 80
 		}
-		SYR = { add_to_faction = PREV }
+		RIV = { add_to_faction = PREV }
 	}
 	option = { #Refuse
 		name = rivendell.11.b
@@ -445,15 +445,15 @@ country_event = {
 	title = rivendell.12.t
 	desc = rivendell.12.d
 	picture = GFX_report_event_alliance
-	
+
 	is_triggered_only = yes
-	
+
 	option = { #Accept
 		name = rivendell.12.a
 		ai_chance = {
 			base = 60
 		}
-		GEO = { add_to_faction = SYR }
+		GON = { add_to_faction = RIV }
 	}
 	option = { #Refuse
 		name = rivendell.12.b
@@ -461,11 +461,11 @@ country_event = {
 			base = 30
 			modifier = {
 				add = 5000
-				GEO = { has_government = fascism }
+				GON = { has_government = fascism }
 			}
 			modifier = {
 				add = 5000
-				GEO = { has_government = fascism }
+				GON = { has_government = fascism }
 			}
 		}
 	}
@@ -477,15 +477,15 @@ country_event = {
 	title = rivendell.13.t
 	desc = rivendell.13.d
 	picture = GFX_report_event_alliance
-	
+
 	is_triggered_only = yes
-	
+
 	option = { #Accept
 		name = rivendell.13.a
 		ai_chance = {
 			base = 50
 		}
-		SYR = { add_to_faction = PREV }
+		RIV = { add_to_faction = PREV }
 	}
 	option = { #Refuse
 		name = rivendell.13.b

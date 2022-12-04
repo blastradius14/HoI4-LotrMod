@@ -4,7 +4,7 @@ country = {
 factor=0
 modifier = {
 	add = 10
-	original_tag = HAI
+	original_tag = HAR
 }
 }
 
@@ -25,7 +25,7 @@ default = no
  cost = 10
   available_if_capitulated = yes
 	completion_reward = {
-		add_tech_bonus = { name = construction_pursuits bonus = 0.5 uses = 2 category = construction_tech }
+		add_tech_bonus = { name = construction_pursuits bonus = 0.5 uses = 2 category = lotr_labour }
 	}
  }
 
@@ -45,7 +45,7 @@ default = no
  				name = industrial_bonus
  				bonus = 0.5
  				uses = 2
- 				category = electronics
+ 				category = lotr_knowledge
  			}
  		}
  }
@@ -91,7 +91,7 @@ default = no
   available_if_capitulated = yes
 	completion_reward = {
 			random_owned_state = {
-					limit = { is_core_of = HAI }
+					limit = { is_core_of = HAR }
 					add_extra_state_shared_building_slots = 3 add_building_construction = { type = industrial_complex level = 3 instant_build = yes }
 			}
 	}
@@ -110,7 +110,7 @@ default = no
   available_if_capitulated = yes
 	completion_reward = {
 			random_owned_state = {
-					limit = { is_core_of = HAI }
+					limit = { is_core_of = HAR }
 					add_extra_state_shared_building_slots = 2 add_building_construction = { type = industrial_complex level = 2 instant_build = yes }
 			}
 	}
@@ -148,7 +148,7 @@ default = no
 				name = industrial_revitalization
 				bonus = 0.5
 				uses = 1
-				category = industry
+				category = lotr_labour_construction_industry
 			}
  	}
  }
@@ -164,7 +164,7 @@ default = no
  prerequisite = { focus = regionalhierarchy }
  cost = 10
   available_if_capitulated = yes
-	completion_reward = { add_ideas = HAI_merciless_union }
+	completion_reward = { add_ideas = HAR_merciless_union }
  }
 
  #Focus for Autonomous Communities
@@ -179,7 +179,7 @@ default = no
  cost = 10
   available_if_capitulated = yes
 		completion_reward = {
-			remove_ideas = HAI_fractured_nation
+			remove_ideas = HAR_fractured_nation
 		}
  }
 
@@ -216,12 +216,8 @@ default = no
 				name = fighter_bonus
 				bonus = 0.5
 				uses = 2
-				technology = early_fighter
-				technology = fighter1
-				technology = fighter2
-				technology = fighter3
-				technology = jet_fighter1
-				technology = jet_fighter2
+				category = lotr_eagles
+				category = lotr_fellbeasts
 			}
 		}
  }
@@ -242,13 +238,13 @@ default = no
 			name = warbred_mumakil
 			bonus = 1.0
 			uses = 1
-			category = cat_heavy_armor
+			category = lotr_men_secrets_mumakil
 		}
 		add_tech_bonus = {
 			name = warbred_mumakil
 			bonus = 0.5
 			uses = 1
-			category = cat_medium_armor
+			category = lotr_men_secrets_mumakil
 		}
 	}
  }
@@ -284,7 +280,7 @@ default = no
 	completion_reward = {
 		create_faction = southern_confederacy
 		add_stability = 0.15
-		custom_effect_tooltip = HAI_liberal_union_tt
+		custom_effect_tooltip = HAR_liberal_union_tt
 		set_global_flag = harad_faction
 	}
  }
@@ -302,7 +298,7 @@ default = no
   available_if_capitulated = yes
 	completion_reward = {
 		add_stability = -0.1
-		custom_effect_tooltip = HAI_authoritarian_federation_tt
+		custom_effect_tooltip = HAR_authoritarian_federation_tt
 	}
  }
 
@@ -324,7 +320,7 @@ default = no
 			 ahead_reduction = 1.0
 			 uses = 1
 			 category = rocketry
-			 category = jet_technology
+			 category = lotr_knowledge_magic
 		 }
 	 }
  }
@@ -346,9 +342,7 @@ default = no
 				name = bb_bonus
 				bonus = 0.5
 				uses = 1
-				technology = basic_battleship
-				technology = improved_battleship
-				technology = advanced_battleship
+				category = lotr_sailing
 			}
 	 }
  }
@@ -365,7 +359,7 @@ default = no
  cost = 10
   available_if_capitulated = yes
 	completion_reward = {
-			add_tech_bonus = { name = extraction_techniques bonus = 0.75 uses = 1 category = synth_resources }
+			add_tech_bonus = { name = extraction_techniques bonus = 0.75 uses = 1 category = lotr_labour_farming }
 	}
  }
 
@@ -419,13 +413,13 @@ default = no
  cost = 10
   available_if_capitulated = yes
 	completion_reward = {
-		if { limit = { has_completed_focus = liberalunion }
-				release = KAZ
-				add_to_faction = KAZ
-				set_global_flag = harad_KAZ_faction
-				else {
-				release_puppet = KAZ
-				set_global_flag = harad_KAZ_puppet
+		if = { limit = { has_completed_focus = liberalunion }
+				release = KND
+				add_to_faction = KND
+				set_global_flag = harad_KND_faction
+				else = {
+				release_puppet = KND
+				set_global_flag = harad_KND_puppet
 				}
 		}
 	}
@@ -444,13 +438,13 @@ default = no
  cost = 10
   available_if_capitulated = yes
 	completion_reward = {
-		if { limit = { has_completed_focus = liberalunion }
-				release = BEL
-				add_to_faction = BEL
-				set_global_flag = harad_BEL_faction
-				else {
-				release_puppet = BEL
-				set_global_flag = harad_BEL_puppet
+		if = { limit = { has_completed_focus = liberalunion }
+				release = PEL
+				add_to_faction = PEL
+				set_global_flag = harad_PEL_faction
+				if = {
+				release_puppet = PEL
+				set_global_flag = harad_PEL_puppet
 				}
 		}
 	}
@@ -469,13 +463,13 @@ default = no
  cost = 10
   available_if_capitulated = yes
 	completion_reward = {
-		if { limit = { has_completed_focus = liberalunion }
-				release = UKR
-				add_to_faction = UKR
-				set_global_flag = harad_UKR_faction
-				else {
-				release_puppet = UKR
-				set_global_flag = harad_UKR_puppet
+		if = { limit = { has_completed_focus = liberalunion }
+				release = UMB
+				add_to_faction = UMB
+				set_global_flag = harad_UMB_faction
+				if = {
+				release_puppet = UMB
+				set_global_flag = harad_UMB_puppet
 				}
 		}
 	}
@@ -492,7 +486,7 @@ default = no
  prerequisite = { focus = authoritarianfederation }
  cost = 10
   available_if_capitulated = yes
-	completion_reward = { add_ideas = HAI_subject_taxation }
+	completion_reward = { add_ideas = HAR_subject_taxation }
  }
 
  #Focus for Import rare Minerals
@@ -546,7 +540,7 @@ default = no
 		id = thekhandendeavour
 		icon = GFX_goal_unknown
 		ai_will_do = { factor = 25 }
-		available = { has_civil_war = no country_exists = KAZ NOT = { has_war_with = KAZ } }
+		available = { has_civil_war = no country_exists = KND NOT = { has_war_with = KND } }
  x =5
  y =5
  mutually_exclusive = { }
@@ -554,8 +548,8 @@ default = no
  cost = 10
   available_if_capitulated = yes
 	completion_reward = {
-		KAZ = {
-			add_ideas = HAI_endeavour
+		KND = {
+			add_ideas = HAR_endeavour
 			858 = { add_extra_state_shared_building_slots = 3 add_building_construction = { type = arms_factory level = 3 instant_build = yes } }
 			858 = { add_extra_state_shared_building_slots = 3 add_building_construction = { type = industrial_complex level = 3 instant_build = yes } }
 		}
@@ -567,7 +561,7 @@ default = no
 		id = thepellardurendeavour
 		icon = GFX_goal_unknown
 		ai_will_do = { factor = 25 }
-		available = { has_civil_war = no country_exists = BEL NOT = { has_war_with = BEL } }
+		available = { has_civil_war = no country_exists = PEL NOT = { has_war_with = PEL } }
  x =7
  y =5
  mutually_exclusive = { }
@@ -575,8 +569,8 @@ default = no
  cost = 10
   available_if_capitulated = yes
 	completion_reward = {
-		BEL = {
-			add_ideas = HAI_endeavour
+		PEL = {
+			add_ideas = HAR_endeavour
 			853 = { add_extra_state_shared_building_slots = 3 add_building_construction = { type = arms_factory level = 3 instant_build = yes } }
 			853 = { add_extra_state_shared_building_slots = 3 add_building_construction = { type = industrial_complex level = 3 instant_build = yes } }
 		}
@@ -588,7 +582,7 @@ default = no
 		id = theumbarendeavour
 		icon = GFX_goal_unknown
 		ai_will_do = { factor = 25 }
-		available = { has_civil_war = no country_exists = UKR NOT = { has_war_with = UKR } }
+		available = { has_civil_war = no country_exists = UMB NOT = { has_war_with = UMB } }
  x =9
  y =5
  mutually_exclusive = { }
@@ -596,8 +590,8 @@ default = no
  cost = 10
   available_if_capitulated = yes
 	completion_reward = {
-		UKR = {
-			add_ideas = HAI_endeavour
+		UMB = {
+			add_ideas = HAR_endeavour
 			849 = { add_extra_state_shared_building_slots = 3 add_building_construction = { type = arms_factory level = 3 instant_build = yes } }
 			849 = { add_extra_state_shared_building_slots = 3 add_building_construction = { type = industrial_complex level = 3 instant_build = yes } }
 		}
@@ -629,7 +623,7 @@ default = no
  prerequisite = { focus = subjugatekhand focus = subjugateumbar }
  cost = 10
   available_if_capitulated = yes
-	completion_reward = { remove_ideas = HAI_fractured_nation }
+	completion_reward = { remove_ideas = HAR_fractured_nation }
  }
 
  #Focus for Joined Recruitment Effort
@@ -637,7 +631,7 @@ default = no
 		id = joinedrecruitmenteffort
 		icon = GFX_goal_generic_propaganda
 		ai_will_do = { factor = 5 }
-		available = { has_civil_war = no country_exists = KAZ NOT = { has_war_with = KAZ } }
+		available = { has_civil_war = no country_exists = KND NOT = { has_war_with = KND } }
  x =4
  y =6
  mutually_exclusive = { }
@@ -645,8 +639,8 @@ default = no
  cost = 10
   available_if_capitulated = yes
 	completion_reward = {
-		add_ideas = HAI_joined_recruitment
-		KAZ = { add_ideas = HAI_joined_recruitment }
+		add_ideas = HAR_joined_recruitment
+		KND = { add_ideas = HAR_joined_recruitment }
 	}
  }
 
@@ -655,7 +649,7 @@ default = no
 		id = manufacturingefforts
 		icon = GFX_goal_generic_production2
 		ai_will_do = { factor = 5 }
-		available = { has_civil_war = no country_exists = KAZ country_exists = BEL NOT = { has_war_with = KAZ } NOT = { has_war_with = BEL } }
+		available = { has_civil_war = no country_exists = KND country_exists = PEL NOT = { has_war_with = KND } NOT = { has_war_with = PEL } }
  x =6
  y =6
  mutually_exclusive = { }
@@ -664,9 +658,9 @@ default = no
  cost = 10
   available_if_capitulated = yes
 	completion_reward = {
-			add_tech_bonus = { name = manufacturing_effort bonus = 0.5 uses = 1 category = industry }
-			KAZ = { add_tech_bonus = { name = manufacturing_effort bonus = 0.5 uses = 1 category = industry } }
-			BEL = { add_tech_bonus = { name = manufacturing_effort bonus = 0.5 uses = 1 category = industry } }
+			add_tech_bonus = { name = manufacturing_effort bonus = 0.5 uses = 1 category = lotr_labour_construction_industry }
+			KND = { add_tech_bonus = { name = manufacturing_effort bonus = 0.5 uses = 1 category = lotr_labour_construction_industry } }
+			PEL = { add_tech_bonus = { name = manufacturing_effort bonus = 0.5 uses = 1 category = lotr_labour_construction_industry } }
 	}
  }
 
@@ -675,7 +669,7 @@ default = no
 		id = thecoastalhighwayproject
 		icon = GFX_goal_generic_navy_cruiser
 		ai_will_do = { factor = 10 }
-		available = { has_civil_war = no country_exists = UKR country_exists = BEL NOT = { has_war_with = UKR } NOT = { has_war_with = BEL } }
+		available = { has_civil_war = no country_exists = UMB country_exists = PEL NOT = { has_war_with = UMB } NOT = { has_war_with = PEL } }
  x =8
  y =6
  mutually_exclusive = { }
@@ -696,7 +690,7 @@ default = no
 		id = foreigntradefocus
 		icon = GFX_goal_generic_positive_trade_relations
 		ai_will_do = { factor = 4 }
-		available = { has_civil_war = no country_exists = UKR NOT = { has_war_with = UKR } }
+		available = { has_civil_war = no country_exists = UMB NOT = { has_war_with = UMB } }
  x =10
  y =6
  mutually_exclusive = { }
@@ -717,7 +711,7 @@ default = no
  prerequisite = { focus = unitetherealm }
  cost = 10
   available_if_capitulated = yes
-	completion_reward = { add_ideas = HAI_common_interests }
+	completion_reward = { add_ideas = HAR_common_interests }
  }
 
  #Focus for Joined Production Effort
@@ -725,7 +719,7 @@ default = no
 		id = joinedproductioneffort
 		icon = GFX_goal_generic_production2
 		ai_will_do = { factor = 4 }
-		available = { has_civil_war = no country_exists = KAZ NOT = { has_war_with = KAZ } }
+		available = { has_civil_war = no country_exists = KND NOT = { has_war_with = KND } }
  x =3
  y =7
  mutually_exclusive = { }
@@ -733,8 +727,8 @@ default = no
  cost = 10
   available_if_capitulated = yes
 	completion_reward = {
-		add_ideas = HAI_joined_production
-		KAZ = { add_ideas = HAI_joined_production }
+		add_ideas = HAR_joined_production
+		KND = { add_ideas = HAR_joined_production }
 	}
  }
 
@@ -743,7 +737,7 @@ default = no
 		id = khandoilreserves
 		icon = GFX_goal_generic_oil_refinery
 		ai_will_do = { factor = 15 }
-		available = { has_civil_war = no country_exists = KAZ NOT = { has_war_with = KAZ } }
+		available = { has_civil_war = no country_exists = KND NOT = { has_war_with = KND } }
  x =5
  y =7
  mutually_exclusive = { }
@@ -761,7 +755,7 @@ default = no
 		id = thepellardurarmada
 		icon = GFX_goal_generic_construct_naval_dockyard
 		ai_will_do = { factor = 15 }
-		available = { has_civil_war = no country_exists = BEL NOT = { has_war_with = BEL } }
+		available = { has_civil_war = no country_exists = PEL NOT = { has_war_with = PEL } }
  x =7
  y =7
  mutually_exclusive = { }
@@ -771,8 +765,8 @@ default = no
   available_if_capitulated = yes
 	completion_reward = {
 			853 = { add_extra_state_shared_building_slots = 5 add_building_construction = { type = dockyard level = 5 instant_build = yes } }
-			custom_effect_tooltip = HAI_pellardur_armada_tt
-			hidden_effect = { load_oob = "BEL_Armada" }
+			custom_effect_tooltip = HAR_pellardur_armada_tt
+			hidden_effect = { load_oob = "PEL_Armada" }
 	}
  }
 
@@ -781,7 +775,7 @@ default = no
 		id = theumbararmada
 		icon = GFX_goal_generic_construct_naval_dockyard
 		ai_will_do = { factor = 15 }
-		available = { has_civil_war = no country_exists = UKR NOT = { has_war_with = UKR } }
+		available = { has_civil_war = no country_exists = UMB NOT = { has_war_with = UMB } }
  x =9
  y =7
  mutually_exclusive = { }
@@ -791,8 +785,8 @@ default = no
   available_if_capitulated = yes
 	completion_reward = {
 			849 = { add_extra_state_shared_building_slots = 5 add_building_construction = { type = dockyard level = 5 instant_build = yes } }
-			custom_effect_tooltip = HAI_umbar_armada_tt
-			hidden_effect = { load_oob = "UKR_Armada" }
+			custom_effect_tooltip = HAR_umbar_armada_tt
+			hidden_effect = { load_oob = "UMB_Armada" }
 	}
  }
 
@@ -818,7 +812,7 @@ default = no
 		id = extractiontechniques
 		icon = GFX_goal_generic_oil_refinery
 		ai_will_do = { factor = 15 }
-		available = { has_civil_war = no country_exists = KAZ NOT = { has_war_with = KAZ } }
+		available = { has_civil_war = no country_exists = KND NOT = { has_war_with = KND } }
  x =5
  y =8
  mutually_exclusive = { }
@@ -828,8 +822,8 @@ default = no
 	completion_reward = {
 		add_resource = { type = oil amount = 12 state = 858 }
 		add_resource = { type = oil amount = 12 state = 859 }
-		add_tech_bonus = { name = extraction_techniques bonus = 1.0 uses = 2 category = excavation_tech }
-		KAZ = { add_tech_bonus = { name = extraction_techniques bonus = 1.0 uses = 2 category = excavation_tech } }
+		add_tech_bonus = { name = extraction_techniques bonus = 1.0 uses = 2 category = lotr_labour_metalworking_mining }
+		KND = { add_tech_bonus = { name = extraction_techniques bonus = 1.0 uses = 2 category = lotr_labour_metalworking_mining } }
 	}
  }
 
@@ -838,7 +832,7 @@ default = no
 		id = afleettofear
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		ai_will_do = { factor = 20 }
-		available = { has_civil_war = no country_exists = BEL country_exists = UKR NOT = { has_war_with = BEL } NOT = { has_war_with = UKR } }
+		available = { has_civil_war = no country_exists = PEL country_exists = UMB NOT = { has_war_with = PEL } NOT = { has_war_with = UMB } }
  x =8
  y =8
  mutually_exclusive = { }
@@ -856,7 +850,7 @@ default = no
 		id = battleshipimprovement
 		icon = GFX_goal_generic_navy_battleship
 		ai_will_do = { factor = 10 }
-		available = { has_civil_war = no country_exists = BEL country_exists = UKR NOT = { has_war_with = BEL } NOT = { has_war_with = UKR } }
+		available = { has_civil_war = no country_exists = PEL country_exists = UMB NOT = { has_war_with = PEL } NOT = { has_war_with = UMB } }
  x =8
  y =9
  mutually_exclusive = { }
@@ -869,11 +863,7 @@ default = no
 				name = bb_bonus
 				bonus = 0.7
 				uses = 1
-				technology = basic_battleship
-				technology = improved_battleship
-				technology = advanced_battleship
-				technology = heavy_battleship
-				technology = heavy_battleship2
+				category = lotr_sailing_sailingship
 			}
 	 }
  }#End of focuses

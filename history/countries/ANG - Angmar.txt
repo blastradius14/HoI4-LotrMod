@@ -1,0 +1,48 @@
+﻿capital = 799
+
+oob = "ANG_1936"
+
+recruit_character = ANG_giric
+recruit_character = ANG_greum
+recruit_character = ANG_rostellen
+recruit_character = ANG_tavas
+recruit_character = ANG_terlach
+recruit_character = ANG_kyven
+recruit_character = ANG_rahan
+recruit_character = ANG_deloric
+recruit_character = ANG_crannog
+recruit_character = ANG_cleclan
+recruit_character = ANG_elphird
+recruit_character = ANG_dark_council
+recruit_character = ANG_red_council
+recruit_character = ANG_elphirn
+
+# Starting tech
+set_technology = {
+	infantry_weapons = 1
+	gwtank = 1
+	tech_mountaineers = 1
+	gw_artillery = 1
+	motorised_infantry = 1
+	tech_recon = 1
+	tech_support = 1
+	basic_train = 1
+	early_destroyer = 1
+	transport = 1
+	convoy_tech = 1
+}
+
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1936.1.1"
+	election_frequency = 48
+	elections_allowed = no
+}
+
+set_popularities = {
+	democratic = 17
+	fascism = 26
+	communism = 17
+	neutrality = 40
+}

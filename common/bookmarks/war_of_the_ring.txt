@@ -4,20 +4,24 @@ bookmarks = {
 		desc = "WAR_OF_THE_RING_DESC"
 		date = 3018.1.1.12
 		picture = "GFX_bookmark_warofthering"
-		default_country = "MON"
+		default_country = "MOR"
 		default = yes
 		
-		"MON"={
-			history = "MON_WAR_OF_THE_RING_DESC"
+		"MOR"={
+			history = "MOR_WAR_OF_THE_RING_DESC"
 			ideology = fascism
 			ideas = {
+				MOR_no_mercy
 			}
 			focuses = {
+				resistsauron
+				submittosauron
+				thefateofminasmorgul
 			}
 		}
 
-		"GEO"={
-			history = "GEO_WAR_OF_THE_RING_DESC"
+		"GON"={
+			history = "GON_WAR_OF_THE_RING_DESC"
 			ideology = neutrality
 			ideas = {
 			}
@@ -25,8 +29,8 @@ bookmarks = {
 			}
 		}
 
-		"JOR"={
-			history = "JOR_WAR_OF_THE_RING_DESC"
+		"ROH"={
+			history = "ROH_WAR_OF_THE_RING_DESC"
 			ideology = democratic
 			ideas = {
 			}
@@ -34,8 +38,8 @@ bookmarks = {
 			}
 		}
 
-		"ISR"={
-			history = "ISR_WAR_OF_THE_RING_DESC"
+		"ISE"={
+			history = "ISE_WAR_OF_THE_RING_DESC"
 			ideology = neutrality
 			ideas = {
 			}
@@ -43,8 +47,8 @@ bookmarks = {
 			}
 		}
 
-		"SYR"={
-			history = "SYR_WAR_OF_THE_RING_DESC"
+		"RIV"={
+			history = "RIV_WAR_OF_THE_RING_DESC"
 			ideology = neutrality
 			ideas = {
 			}
@@ -52,8 +56,8 @@ bookmarks = {
 			}
 		}
 
-		"ECU"={
-			history = "ECU_WAR_OF_THE_RING_DESC"
+		"ERE"={
+			history = "ERE_WAR_OF_THE_RING_DESC"
 			ideology = neutrality
 			ideas = {
 			}
@@ -61,8 +65,33 @@ bookmarks = {
 			}
 		}
 
-		"LIT"={
-			history = "LIT_WAR_OF_THE_RING_DESC"
+		"LTH"={
+			history = "LTH_WAR_OF_THE_RING_DESC"
+			ideology = neutrality
+			ideas = {
+			}
+			focuses = {
+			}
+		}
+
+		###Minor
+		"HAR" = {
+			minor = yes
+			history = ""
+			ideology = neutrality
+			ideas = {
+				HAR_fractured_nation
+			}
+			focuses = {
+				standasone
+				autonomouscommunities
+				follow_the_dark_lord
+			}
+		}
+
+		"RHU" = {
+			minor = yes
+			history = ""
 			ideology = neutrality
 			ideas = {
 			}

@@ -27,7 +27,7 @@ country_event = {
 				add = 100
 			}
 		}
-		GEO = { end_puppet = ANG }
+		GON = { end_puppet = ANG }
 	}
 	option = { #Refuse
 		name = angmar.1.b
@@ -46,8 +46,8 @@ country_event = {
 				has_government = democratic
 			}
 		}
-		GEO = { end_puppet = ANG }
-		GEO = { declare_war_on = { target = ANG type = annex_everything } }
+		GON = { end_puppet = ANG }
+		GON = { declare_war_on = { target = ANG type = annex_everything } }
 	}
 }
 
@@ -158,5 +158,26 @@ country_event = {
 	}
 	option = {
 		name = political.17.b
+	}
+}
+
+# Mordor invites Isengard to faction
+country_event = {
+	id = angmar.5
+	title = angmar.5.t
+	desc = angmar.5.d
+	picture = GFX_report_event_ring
+
+	is_triggered_only = yes
+
+	option = {
+		name = angmar.5.a
+		MOR = {
+			add_to_faction = ISE
+		}
+	}
+
+	option = {
+		name = angmar.5.b
 	}
 }

@@ -4,7 +4,7 @@ country = {
 	factor=0
 	modifier = {
 		add = 10
-		tag = SYR
+		tag = RIV
 	}
 }
 
@@ -39,7 +39,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 prerequisite = { focus = thefateofrivendell}
 	 cost = 10
 	 available_if_capitulated = yes
-	 completion_reward = { add_ideas = SYR_collaboration_focus }
+	 completion_reward = { add_ideas = RIV_collaboration_focus }
  }
 
  #Focus for Trade Reforms
@@ -53,7 +53,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 prerequisite = { focus = collaborationfocus}
 	 cost = 10
 	 available_if_capitulated = yes
-	 completion_reward = { add_ideas = SYR_trade_reforms }
+	 completion_reward = { add_ideas = RIV_trade_reforms }
  }
 
  #Focus for Fight Abroad
@@ -67,7 +67,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 prerequisite = { focus = tradereforms}
 	 cost = 10
 	 available_if_capitulated = yes
-	 completion_reward = { add_ideas = SYR_fight_abroad }
+	 completion_reward = { add_ideas = RIV_fight_abroad }
  }
 
  #Focus for Self-Reliance Focus
@@ -81,7 +81,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 prerequisite = { focus = thefateofrivendell}
 	 cost = 10
 	 available_if_capitulated = yes
-	 completion_reward = { add_ideas = SYR_selfreliance_focus }
+	 completion_reward = { add_ideas = RIV_selfreliance_focus }
  }
 
  #Focus for Mining Effort
@@ -89,7 +89,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 id = syr_miningeffort
 	 icon = GFX_goal_generic_construction2
 	 ai_will_do = { factor = 2 }
-	 available = { 806 = { is_controlled_by = SYR } }
+	 available = { 806 = { is_controlled_by = RIV } }
 	 x =3
 	 y =2
 	 mutually_exclusive = { }
@@ -110,7 +110,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 prerequisite = { focus = syr_miningeffort}
 	 cost = 10
 	 available_if_capitulated = yes
-	 completion_reward = { add_ideas = SYR_fight_at_home }
+	 completion_reward = { add_ideas = RIV_fight_at_home }
  }
 
  #Focus for Rule the Skies
@@ -143,12 +143,8 @@ continuous_focus_position = { x = 50 y = 2000 }
 				name = fighter_bonus
 				bonus = 0.5
 				uses = 1
-				technology = early_fighter
-				technology = fighter1
-				technology = fighter2
-				technology = fighter3
-				technology = jet_fighter1
-				technology = jet_fighter2
+				category = lotr_eagles
+				category = lotr_fellbeasts
 			}
 		}
  }
@@ -170,7 +166,8 @@ continuous_focus_position = { x = 50 y = 2000 }
 			 bonus = 0.5
 			 ahead_reduction = 1
 			 uses = 1
-			 category = cas_bomber
+			 category = lotr_eagles
+			 category = lotr_fellbeasts
 		 }
 	 }
  }
@@ -191,10 +188,8 @@ continuous_focus_position = { x = 50 y = 2000 }
 			 name = bomber_bonus
 			 bonus = 0.5
 			 uses = 2
-			 technology = strategic_bomber1
-			 technology = strategic_bomber2
-			 technology = strategic_bomber3
-			 category = tactical_bomber
+			 category = lotr_eagles
+			 category = lotr_fellbeasts
 		 }
 	 }
  }
@@ -240,7 +235,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	available_if_capitulated = yes
 	completion_reward = {
 		add_tech_bonus = {
-			name = SYR_air_maneuvers
+			name = RIV_air_maneuvers
 			bonus = 0.5
 			uses = 2
 			category = air_doctrine
@@ -278,8 +273,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 			name = secret_bonus
 			bonus = 0.5
 			uses = 1
-			category = nuclear
-			category = rocketry
+			category = lotr_knowledge_magic
 		}
 	}
  }
@@ -301,8 +295,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 			 name = jet_rocket_bonus
 			 ahead_reduction = 0.5
 			 uses = 2
-			 category = rocketry
-			 category = jet_technology
+			 category = lotr_knowledge_magic
 		 }
 	 }
  }
@@ -325,7 +318,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 focus = {
 	 id = industrializeeregion
 	 icon = GFX_goal_generic_construct_civ_factory
-	 available = { 808 = { is_controlled_by = SYR } 807 = { is_controlled_by = SYR } }
+	 available = { 808 = { is_controlled_by = RIV } 807 = { is_controlled_by = RIV } }
 	 ai_will_do = { factor = 4 }
 	 x =33
 	 y =1
@@ -346,7 +339,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 id = exploiteregionoilfields
 	 icon = GFX_goal_generic_oil_refinery
 	 ai_will_do = { factor = 5 }
-	 available = { 808 = { is_controlled_by = SYR } 807 = { is_controlled_by = SYR } }
+	 available = { 808 = { is_controlled_by = RIV } 807 = { is_controlled_by = RIV } }
 	 x =33
 	 y =2
 	 mutually_exclusive = { }
@@ -361,7 +354,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	id = eregionairbaseexpansion
 	icon = GFX_goal_generic_air_fighter
 	ai_will_do = { factor = 4 }
-	available = { 808 = { is_controlled_by = SYR } 807 = { is_controlled_by = SYR } }
+	available = { 808 = { is_controlled_by = RIV } 807 = { is_controlled_by = RIV } }
 	x =33
 	y =3
 	mutually_exclusive = { }
@@ -379,7 +372,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 id = industrializeimladris
 	 icon = GFX_goal_generic_construct_civ_factory
 	 ai_will_do = { factor = 4 }
-	 available = { 806 = { is_controlled_by = SYR } }
+	 available = { 806 = { is_controlled_by = RIV } }
 	 x =37
 	 y =1
 	 mutually_exclusive = { focus = industrializeeregion }
@@ -397,7 +390,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 id = exploitrivendelloredeposits
 	 icon = GFX_goal_generic_construction2
 	 ai_will_do = { factor = 4 }
-	 available = { 806 = { is_controlled_by = SYR } }
+	 available = { 806 = { is_controlled_by = RIV } }
 	 x =37
 	 y =2
 	 mutually_exclusive = { }
@@ -405,14 +398,14 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 cost = 10
 	 available_if_capitulated = yes
 	 completion_reward = { add_resource = { type = steel amount = 16 state = 806 }  } }
- 
+
 
  #Focus for Imladris Air Base Expansion
 	focus = {
 	id = imladrisairbaseexpansion
 	icon = GFX_goal_generic_build_airforce
 	ai_will_do = { factor = 4 }
-	available = { 806 = { is_controlled_by = SYR } }
+	available = { 806 = { is_controlled_by = RIV } }
 	x =37
 	y =3
 	mutually_exclusive = { }
@@ -427,7 +420,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 id = roadinitiative
 	 icon = GFX_goal_generic_construct_infrastructure
 	 ai_will_do = { factor = 3 }
-	 available = { 806 = { is_controlled_by = SYR } 807 = { is_controlled_by = SYR } 808 = { is_controlled_by = SYR } }
+	 available = { 806 = { is_controlled_by = RIV } 807 = { is_controlled_by = RIV } 808 = { is_controlled_by = RIV } }
 	 x =35
 	 y =3
 	 mutually_exclusive = { }
@@ -446,7 +439,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 id = militarizeeregion
 	 icon = GFX_goal_generic_construct_mil_factory
 	 ai_will_do = { factor = 3 }
-	 available = { 808 = { is_controlled_by = SYR } 807 = { is_controlled_by = SYR } }
+	 available = { 808 = { is_controlled_by = RIV } 807 = { is_controlled_by = RIV } }
 	 x =33
 	 y =4
 	 mutually_exclusive = { focus = militarizeimladris }
@@ -466,7 +459,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 id = improveeregionproductionline
 	 icon = GFX_goal_generic_construct_mil_factory
 	 ai_will_do = { factor = 3 }
-	 available = { 808 = { is_controlled_by = SYR } 807 = { is_controlled_by = SYR } }
+	 available = { 808 = { is_controlled_by = RIV } 807 = { is_controlled_by = RIV } }
 	 x =33
 	 y =5
 	 mutually_exclusive = { }
@@ -486,7 +479,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 id = militarizeimladris
 	 icon = GFX_goal_generic_construct_mil_factory
 	 ai_will_do = { factor = 3 }
-	 available = { 806 = { is_controlled_by = SYR } }
+	 available = { 806 = { is_controlled_by = RIV } }
 	 x =37
 	 y =4
 	 mutually_exclusive = { focus = militarizeeregion }
@@ -504,7 +497,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 id = improveimladrisproductionline
 	 icon = GFX_goal_generic_construct_mil_factory
 	 ai_will_do = { factor = 3 }
-	 available = { 806 = { is_controlled_by = SYR } }
+	 available = { 806 = { is_controlled_by = RIV } }
 	 x =37
 	 y =5
 	 mutually_exclusive = { }
@@ -536,7 +529,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 	 id = elvenwarmachine
 	 icon = GFX_goal_generic_production2
 	 ai_will_do = { factor = 3 }
-	 available = { 806 = { is_controlled_by = SYR } 807 = { is_controlled_by = SYR } 808 = { is_controlled_by = SYR } }
+	 available = { 806 = { is_controlled_by = RIV } 807 = { is_controlled_by = RIV } 808 = { is_controlled_by = RIV } }
 	 x =35
 	 y =6
 	 mutually_exclusive = {}
@@ -580,7 +573,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		cost = 15
   	available_if_capitulated = yes
 		completion_reward = {
-			add_ideas = SYR_liberty_consensus
+			add_ideas = RIV_liberty_consensus
 		}
  }
 
@@ -596,7 +589,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		cost = 5
   	available_if_capitulated = yes
 		completion_reward = {
-			add_ideas = SYR_collective_thinking
+			add_ideas = RIV_collective_thinking
 		}
  }
 
@@ -613,7 +606,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		cost = 10
   	available_if_capitulated = yes
 		completion_reward = {
-			add_ideas = SYR_stability_focus
+			add_ideas = RIV_stability_focus
 		}
  }
 
@@ -651,10 +644,9 @@ continuous_focus_position = { x = 50 y = 2000 }
 			news_event = { hours = 48 id = news.357 }
 			add_popularity = { ideology = fascism popularity = 0.05 }
 			add_popularity = { ideology = communism popularity = 0.02 }
-			add_ideas = SYR_ominous_death
-			remove_unit_leader = 5001
-			kill_country_leader = yes
-			remove_ideas = SYR_virtues_of_lord_elrond
+			add_ideas = RIV_ominous_death
+			kill_ideology_leader = democratic
+			remove_ideas = RIV_virtues_of_lord_elrond
 		}
  }
 
@@ -695,8 +687,8 @@ continuous_focus_position = { x = 50 y = 2000 }
 		id = mordorcooperation
 		icon = GFX_mordorcooperation
 		ai_will_do = { factor = 4 }
-		bypass = { is_in_faction_with = MON }
-		available = { MON = { has_government = fascism } MON = { is_in_faction = yes } }
+		bypass = { is_in_faction_with = MOR }
+		available = { MOR = { has_government = fascism } MOR = { is_in_faction = yes } }
  		x =0
  		y =5
  		mutually_exclusive = { }
@@ -704,7 +696,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		cost = 10
   	available_if_capitulated = yes
 		completion_reward = {
-			MON = { add_to_faction = SYR }
+			MOR = { add_to_faction = RIV }
 		}
  }
 
@@ -712,7 +704,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 		focus = {
 		id = buildupdefensiveoutposts
 		icon = GFX_goal_generic_fortify_city
-		available = { 806 = { is_controlled_by = SYR } 808 = { is_controlled_by = SYR } }
+		available = { 806 = { is_controlled_by = RIV } 808 = { is_controlled_by = RIV } }
 		ai_will_do = { factor = 6 }
  		x =10
  		y =4
@@ -743,9 +735,9 @@ continuous_focus_position = { x = 50 y = 2000 }
  		y =5
  		mutually_exclusive = { }
  		prerequisite = { focus = elvenarrogance}
-  	prerequisite = { focus =assasinateelrond}
+  		prerequisite = { focus =assasinateelrond}
  		cost = 10
-  	available_if_capitulated = yes
+  		available_if_capitulated = yes
 		completion_reward = {
 			if = {
 				limit = { has_idea = neutrality_idea }
@@ -792,12 +784,12 @@ continuous_focus_position = { x = 50 y = 2000 }
 		focus = {
 		id = reforgethebladeofnarsil
 		icon = GFX_reforgethebladeofnarsil
-		available = { NOT { has_global_flag = aragorn_dead } }
+		available = { NOT = { has_global_flag = aragorn_dead } }
 		ai_will_do = {
 			factor = 3
 			modifier = {
 					add = 6
-					GEO = { has_war_with = MON }
+					GON = { has_war_with = MOR }
 			}
 		}
  		x =17
@@ -837,9 +829,9 @@ continuous_focus_position = { x = 50 y = 2000 }
  		cost = 10
   	available_if_capitulated = yes
 		completion_reward = {
-			LIT = { add_opinion_modifier = { target = SYR modifier = syr_elven_unity } }
-			LEB = { add_opinion_modifier = { target = SYR modifier = syr_elven_unity } }
-			if { limit = { NOT = { MEN = { has_government = communism } } } MEN = { add_opinion_modifier = { target = SYR modifier = syr_elven_unity } } }
+			LTH = { add_opinion_modifier = { target = RIV modifier = syr_elven_unity } }
+			LIN = { add_opinion_modifier = { target = RIV modifier = syr_elven_unity } }
+			if = { limit = { NOT = { MIR = { has_government = communism } } } MIR = { add_opinion_modifier = { target = RIV modifier = syr_elven_unity } } }
 		}
  }
 
@@ -847,7 +839,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 		focus = {
 		id = seekcooperationwithgondor
 		icon = GFX_seekcooperationwithgondor
-		available = { GEO = { NOT = { is_in_faction_with = MON } } }
+		available = { GON = { NOT = { is_in_faction_with = MOR } } }
 		ai_will_do = { factor = 8 }
  		x =21
  		y =4
@@ -855,7 +847,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		prerequisite = { focus = integrityfocus}
  		cost = 10
   	available_if_capitulated = yes
-		completion_reward = { GEO = { add_opinion_modifier = { target = SYR modifier = large_increase } } }
+		completion_reward = { GON = { add_opinion_modifier = { target = RIV modifier = large_increase } } }
  }
 
  #Focus for Sabotage Rohan
@@ -863,8 +855,8 @@ continuous_focus_position = { x = 50 y = 2000 }
 		id = sabotagerohan
 		icon = GFX_sabotagerohan
 		ai_will_do = { factor = 2 }
-		available = { NOT = { JOR = { has_government = fascism } } }
-		bypass = { JOR = { has_government = fascism } }
+		available = { NOT = { ROH = { has_government = fascism } } }
+		bypass = { ROH = { has_government = fascism } }
  		x =0
  		y =6
  		mutually_exclusive = { }
@@ -872,7 +864,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		cost = 10
   	available_if_capitulated = yes
 		completion_reward = {
-			JOR = { add_ideas = SYR_sabotage }
+			ROH = { add_ideas = RIV_sabotage }
 		}
  }
 
@@ -902,9 +894,9 @@ continuous_focus_position = { x = 50 y = 2000 }
  		cost = 15
   	available_if_capitulated = yes
 		completion_reward = {
-			LIT = { country_event = { days = 1 id = rivendell.5 } }
-			if { limit = { NOT = { MEN = { has_government = communism } } } MEN = { country_event = { days = 1 id = rivendell.6 } } }
-			LEB = { country_event = { days = 1 id = rivendell.7 } }
+			LTH = { country_event = { days = 1 id = rivendell.5 } }
+			if = { limit = { NOT = { MIR = { has_government = communism } } } MIR = { country_event = { days = 1 id = rivendell.6 } } }
+			LIN = { country_event = { days = 1 id = rivendell.7 } }
 		}
  }
 
@@ -919,7 +911,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		prerequisite = { focus = elvendefencealliance}
  		cost = 10
   	available_if_capitulated = yes
-		completion_reward = { LIT = { country_event = { days = 1 id = rivendell.13 } } }
+		completion_reward = { LTH = { country_event = { days = 1 id = rivendell.13 } } }
  }
 
  #Focus for Burry him with honor
@@ -934,7 +926,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		cost = 10
   	available_if_capitulated = yes
 		completion_reward = {
-			add_ideas = SYR_prideful_past
+			add_ideas = RIV_prideful_past
 		}
  }
 
@@ -952,7 +944,7 @@ continuous_focus_position = { x = 50 y = 2000 }
   	available_if_capitulated = yes
 		completion_reward = {
 			add_country_leader_trait = ringbearer
-			add_ideas = SYR_ends_justify_the_means
+			add_ideas = RIV_ends_justify_the_means
 		}
  }
 
@@ -968,7 +960,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		prerequisite = { focus = sharethewealthofrivendell}
  		cost = 10
   	available_if_capitulated = yes
-		completion_reward = { add_ideas = SYR_revisionist_regime }
+		completion_reward = { add_ideas = RIV_revisionist_regime }
  }
 
  #Focus for Keep the Skies Clear
@@ -976,7 +968,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 		id = keeptheskiesclear
 		icon = GFX_goal_generic_forceful_treaty
 		ai_will_do = { factor = 5 }
-		available = { 806 = { is_controlled_by = SYR } 807 = { is_controlled_by = SYR } 808 = { is_controlled_by = SYR } }
+		available = { 806 = { is_controlled_by = RIV } 807 = { is_controlled_by = RIV } 808 = { is_controlled_by = RIV } }
  		x =10
  		y =5
  		mutually_exclusive = { }
@@ -998,7 +990,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 			factor = 3
 			modifier = {
 					add = 10
-					JOR = { fascism > 0.4 }
+					ROH = { fascism > 0.4 }
 			}
 		}
  		x =14
@@ -1007,7 +999,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		prerequisite = { focus = exertinfluenceamongstmen}
  		cost = 10
   	available_if_capitulated = yes
-		completion_reward = { JOR = { add_ideas = SYR_rivendell_influence_d }	}
+		completion_reward = { ROH = { add_ideas = RIV_rivendell_influence_d }	}
  }
 
  #Focus for Prevent Extremism in Gondor
@@ -1018,7 +1010,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 			factor = 3
 			modifier = {
 					add = 10
-					GEO = { fascism > 0.4 }
+					GON = { fascism > 0.4 }
 			}
 		}
  		x =16
@@ -1027,14 +1019,14 @@ continuous_focus_position = { x = 50 y = 2000 }
  		prerequisite = { focus = exertinfluenceamongstmen}
  		cost = 10
   	available_if_capitulated = yes
-		completion_reward = { GEO = { add_ideas = SYR_rivendell_influence_d }	}
+		completion_reward = { GON = { add_ideas = RIV_rivendell_influence_d }	}
  }
 
  #Focus for Ask Gondor for an Alliance
 		focus = {
 		id = askgondorforanalliance
 		icon = GFX_goal_tripartite_pact
-		available = { GEO = { is_in_faction = yes } }
+		available = { GON = { is_in_faction = yes } }
 		ai_will_do = { factor = 10 }
  		x =21
  		y =5
@@ -1042,7 +1034,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		prerequisite = { focus = seekcooperationwithgondor}
  		cost = 10
   	available_if_capitulated = yes
-		completion_reward = { GEO = { country_event = { days = 1 id = rivendell.12 } } }
+		completion_reward = { GON = { country_event = { days = 1 id = rivendell.12 } } }
  }
 
  #Focus for Sabotage Gondor
@@ -1050,8 +1042,8 @@ continuous_focus_position = { x = 50 y = 2000 }
 		id = sabotagegondor
 		icon = GFX_sabotagegondor
 		ai_will_do = { factor = 2 }
-		available = { NOT = { GEO = { has_government = fascism } } }
-		bypass = { GEO = { has_government = fascism } }
+		available = { NOT = { GON = { has_government = fascism } } }
+		bypass = { GON = { has_government = fascism } }
  		x =0
  		y =7
  		mutually_exclusive = { }
@@ -1059,7 +1051,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		cost = 10
   	available_if_capitulated = yes
 		completion_reward = {
-			GEO = { add_ideas = SYR_sabotage }
+			GON = { add_ideas = RIV_sabotage }
 		}
  }
 
@@ -1075,9 +1067,9 @@ continuous_focus_position = { x = 50 y = 2000 }
  		cost = 15
   	available_if_capitulated = yes
 		completion_reward = {
-			ARG = { country_event = { days = 1 id = rivendell.8 } }
-			URG = { country_event = { days = 1 id = rivendell.9 } }
-			COL = { country_event = { days = 1 id = rivendell.10 } }
+			ART = { country_event = { days = 1 id = rivendell.8 } }
+			RHD = { country_event = { days = 1 id = rivendell.9 } }
+			CAR = { country_event = { days = 1 id = rivendell.10 } }
 		}
  }
 
@@ -1109,14 +1101,14 @@ continuous_focus_position = { x = 50 y = 2000 }
 		id = invitemirkwood
 		icon = GFX_goal_generic_improve_relations
 		ai_will_do = { factor = 3 }
-		bypass = { MEN = { has_government = communism } }
+		bypass = { MIR = { has_government = communism } }
  		x =23
  		y =6
  		mutually_exclusive = { }
  		prerequisite = { focus = invitelothlorien}
  		cost = 10
   	available_if_capitulated = yes
-		completion_reward = { MEN = { country_event = { days = 1 id = rivendell.13 } } }
+		completion_reward = { MIR = { country_event = { days = 1 id = rivendell.13 } } }
  }
 
  #Focus for Blame the Rangers
@@ -1133,11 +1125,11 @@ continuous_focus_position = { x = 50 y = 2000 }
 		completion_reward = {
 			add_threat = 2
 			news_event = { hours = 48 id = news.358 }
-			remove_ideas = SYR_ominous_death
-			SYR = { add_opinion_modifier = { target = URG modifier = syr_blame } }
-			SYR = { add_opinion_modifier = { target = COL modifier = syr_blame } }
-			URG = { add_opinion_modifier = { target = SYR modifier = syr_blame } }
-			COL = { add_opinion_modifier = { target = SYR modifier = syr_blame } }
+			remove_ideas = RIV_ominous_death
+			RIV = { add_opinion_modifier = { target = RHD modifier = syr_blame } }
+			RIV = { add_opinion_modifier = { target = CAR modifier = syr_blame } }
+			RHD = { add_opinion_modifier = { target = RIV modifier = syr_blame } }
+			CAR = { add_opinion_modifier = { target = RIV modifier = syr_blame } }
 		}
  }
 
@@ -1155,11 +1147,11 @@ continuous_focus_position = { x = 50 y = 2000 }
 		completion_reward = {
 			add_threat = 2
 			news_event = { hours = 48 id = news.359 }
-			remove_ideas = SYR_ominous_death
-			SYR = { add_opinion_modifier = { target = ECU modifier = syr_blame } }
-			SYR = { add_opinion_modifier = { target = NOR modifier = syr_blame } }
-			NOR = { add_opinion_modifier = { target = SYR modifier = syr_blame } }
-			ECU = { add_opinion_modifier = { target = SYR modifier = syr_blame } }
+			remove_ideas = RIV_ominous_death
+			RIV = { add_opinion_modifier = { target = ERE modifier = syr_blame } }
+			RIV = { add_opinion_modifier = { target = MOA modifier = syr_blame } }
+			MOA = { add_opinion_modifier = { target = RIV modifier = syr_blame } }
+			ERE = { add_opinion_modifier = { target = RIV modifier = syr_blame } }
 		}
  }
 
@@ -1175,7 +1167,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		cost = 10
   	available_if_capitulated = yes
 		completion_reward = {
-			add_ideas = SYR_millitary_cooperation
+			add_ideas = RIV_millitary_cooperation
 		}
  }
 
@@ -1183,16 +1175,16 @@ continuous_focus_position = { x = 50 y = 2000 }
 		focus = {
 		id = embracesauronsreign
 		icon = GFX_embracesauronsreign
-		available = { MON = { has_government = fascism } MON = { has_country_leader = { ruling_only = yes name = "Sauron" } } }
+		available = { MOR = { has_government = fascism } MOR = { has_country_leader = { ruling_only = yes name = "Sauron" } } }
 		ai_will_do = {
 			factor = 5
 			modifier = {
 					add = 10
-					SYR = { num_divisions < 80 }
+					RIV = { num_divisions < 80 }
 			}
 			modifier = {
 					add = 500
-					MON = { has_idea = one_true_ring }
+					MOR = { has_idea = one_true_ring }
 			}
 		}
  		x =0
@@ -1201,7 +1193,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		prerequisite = { focus = sabotagegondor}
  		cost = 10
   	available_if_capitulated = yes
-		completion_reward = { MON = { puppet = SYR } add_ideas = SYR_might_of_sauron add_threat = 3 }
+		completion_reward = { MOR = { puppet = RIV } add_ideas = RIV_might_of_sauron add_threat = 3 }
  }
 
  #Focus for Anti-Collectivism Pact
@@ -1220,12 +1212,12 @@ continuous_focus_position = { x = 50 y = 2000 }
 		completion_reward = {
 				news_event = { hours = 48 id = news.360 }
 			 	create_faction = "rivendell_initiative"
-				LIT = { country_event = { days = 1 id = rivendell.11 } }
-				MEN = { country_event = { days = 1 id = rivendell.11 } }
-				LEB = { country_event = { days = 1 id = rivendell.11 } }
-				ARG = { country_event = { days = 1 id = rivendell.11 } }
-				URG = { country_event = { days = 1 id = rivendell.11 } }
-				COL = { country_event = { days = 1 id = rivendell.11 } }
+				LTH = { country_event = { days = 1 id = rivendell.11 } }
+				MIR = { country_event = { days = 1 id = rivendell.11 } }
+				LIN = { country_event = { days = 1 id = rivendell.11 } }
+				ART = { country_event = { days = 1 id = rivendell.11 } }
+				RHD = { country_event = { days = 1 id = rivendell.11 } }
+				CAR = { country_event = { days = 1 id = rivendell.11 } }
 		}
  }
 
@@ -1238,7 +1230,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 			factor = 5
 			modifier = {
 					add = 10
-					SYR = { num_divisions > 100 }
+					RIV = { num_divisions > 100 }
 			}
 		}
  		x =2
@@ -1248,8 +1240,8 @@ continuous_focus_position = { x = 50 y = 2000 }
  		cost = 10
   	available_if_capitulated = yes
 		completion_reward = {
-			add_ideas = SYR_idealist_regime
-			MON = { remove_from_faction = SYR }
+			add_ideas = RIV_idealist_regime
+			MOR = { remove_from_faction = RIV }
 		}
  }
 
@@ -1264,7 +1256,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		prerequisite = { focus = invitemirkwood}
  		cost = 10
   	available_if_capitulated = yes
-		completion_reward = { LEB = { country_event = { days = 1 id = rivendell.13 } } }
+		completion_reward = { LIN = { country_event = { days = 1 id = rivendell.13 } } }
  }
 
  #Focus for Demand Rhudaur
@@ -1272,7 +1264,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 		id = demandrhudaur
 		icon = GFX_goal_generic_major_war
 		ai_will_do = { factor = 5 }
-		bypass = { has_war_with = URG }
+		bypass = { has_war_with = RHD }
  		x =4
  		y =7
  		mutually_exclusive = { }
@@ -1280,7 +1272,7 @@ continuous_focus_position = { x = 50 y = 2000 }
   	prerequisite = { focus =licentiousexpansionism}
  		cost = 10
   	available_if_capitulated = yes
-		completion_reward = {	create_wargoal = { type = annex_everything target = URG } }
+		completion_reward = {	create_wargoal = { type = annex_everything target = RHD } }
  }
 
  #Focus for Seek the Jewels of Moria
@@ -1288,7 +1280,7 @@ continuous_focus_position = { x = 50 y = 2000 }
 		id = seekthejewelsofmoria
 		icon = GFX_goal_generic_major_war
 		ai_will_do = { factor = 2 }
-		bypass = { has_war_with = NOR }
+		bypass = { has_war_with = MOA }
  		x =6
  		y =7
  		mutually_exclusive = { }
@@ -1296,7 +1288,7 @@ continuous_focus_position = { x = 50 y = 2000 }
   	prerequisite = { focus =licentiousexpansionism}
  		cost = 10
   	available_if_capitulated = yes
-		completion_reward = {	create_wargoal = { type = annex_everything target = NOR } }
+		completion_reward = {	create_wargoal = { type = annex_everything target = MOA } }
  }
 
  #Focus for Joint Training Exercises
@@ -1349,7 +1341,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		prerequisite = { focus = demandrhudaur  focus = seekthejewelsofmoria}
  		cost = 10
   	available_if_capitulated = yes
-		completion_reward = {	create_wargoal = { type = annex_everything target = COL } }
+		completion_reward = {	create_wargoal = { type = annex_everything target = CAR } }
  }
 
  #Focus for Sanction Saurons Allies
@@ -1366,10 +1358,10 @@ continuous_focus_position = { x = 50 y = 2000 }
 		completion_reward = {
 			every_country = {
 				limit = {
-					is_in_faction_with = MON
+					is_in_faction_with = MOR
 				}
-				SYR = { add_opinion_modifier = { target = PREV modifier = embargo } }
-				THIS = { add_opinion_modifier = { target = SYR modifier = embargo } }
+				RIV = { add_opinion_modifier = { target = PREV modifier = embargo } }
+				THIS = { add_opinion_modifier = { target = RIV modifier = embargo } }
 				}
 		}
  }
@@ -1378,16 +1370,16 @@ continuous_focus_position = { x = 50 y = 2000 }
 		focus = {
 		id = themordorthreat
 		icon = GFX_goal_generic_major_war
-		available = { OR = { MON = { has_government = fascism } MON = { has_government = communism } } }
+		available = { OR = { MOR = { has_government = fascism } MOR = { has_government = communism } } }
 		ai_will_do = {
 			factor = 2
 			modifier = {
 					add = 5
-					MON = { has_added_tension_amount > 0.25 }
+					MOR = { has_added_tension_amount > 0.25 }
 			}
 			modifier = {
 					add = 2
-					MON = { has_government = fascism }
+					MOR = { has_government = fascism }
 			}
 		}
  		x =20
@@ -1396,7 +1388,7 @@ continuous_focus_position = { x = 50 y = 2000 }
  		prerequisite = { focus = sanctionsauronsallies}
  		cost = 10
   	available_if_capitulated = yes
-		completion_reward = { create_wargoal = { type = annex_everything target = MON } }
+		completion_reward = { create_wargoal = { type = annex_everything target = MOR } }
  }
 
  #Focus for The Angmar Threat
@@ -1424,16 +1416,16 @@ continuous_focus_position = { x = 50 y = 2000 }
 		focus = {
 		id = theisengardthreat
 		icon = GFX_goal_generic_major_war
-		available = { OR = { ISR = { has_government = fascism } ISR = { has_government = communism } } }
+		available = { OR = { ISE = { has_government = fascism } ISE = { has_government = communism } } }
 		ai_will_do = {
 			factor = 1
 			modifier = {
 					add = 5
-					ISR = { has_added_tension_amount > 0.15 }
+					ISE = { has_added_tension_amount > 0.15 }
 			}
 			modifier = {
 					add = 3
-					ISR = { has_government = fascism }
+					ISE = { has_government = fascism }
 			}
 		}
  		x =24
@@ -1442,6 +1434,6 @@ continuous_focus_position = { x = 50 y = 2000 }
  		prerequisite = { focus = sanctionsauronsallies}
  		cost = 10
   	available_if_capitulated = yes
-		completion_reward = { create_wargoal = { type = annex_everything target = ISR } }
+		completion_reward = { create_wargoal = { type = annex_everything target = ISE } }
  }
 }

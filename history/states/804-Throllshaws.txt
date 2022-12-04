@@ -6,17 +6,17 @@ state={
 	}
 	
 	history={
-		owner = URG
+		owner = RHD
 		buildings = {
 			infrastructure = 1
 			industrial_complex = 1
 		}
-		add_core_of = URG
+		add_core_of = RHD
 		victory_points = { 1754 5 }
 	}
 	manpower=1000000
 	resources={
-		steel = 16
+		steel = 2
 	}
 	state_category = rural
 	buildings_max_level_factor=1.000

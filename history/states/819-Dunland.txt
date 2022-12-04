@@ -6,19 +6,18 @@ state={
 	}
 	
 	history={
-		owner = EGY
+		owner = ENE
 		buildings = {
 			infrastructure = 2
 			industrial_complex = 1
 		}
-		add_core_of = EGY
+		add_core_of = ENE
 		victory_points = { 4523 15 }
 
 	}
 	manpower=530000
 	resources={
-		oil=13
-		chromium=16
+		rubber=7
 	}
 	state_category = town
 	buildings_max_level_factor=1.000
